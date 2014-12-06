@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>単純に拡大した正方形</title>
+<script src="../js/modernizr-2.0.6.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", eventWindowLoaded, false);
+
+function eventWindowLoaded(){
+	canvasApp();
+}
+
+function canvasSupport(){
+	return Modernizr.canvas;
+}
+
+function canvasApp(){
+	if(!canvasSupport()){
+		return;
+	}else{
+		var theCanvas = document.getElementById("canvasOne");
+		var context = theCanvas.getContext("2d");
+	}
+	
+	drawScreen();
+	
+	function drawScreen(){
+		context.setTransform(1, 0, 0, 1, 0, 0);
+		context.scale(2, 2);
+		context.fillStyle = "red";
+		context.fillRect(100, 100, 50, 50);
+	}
+}
+</script>
+</head>
+<body>
+<div style="position: absolute; top: 50px; left: 50px;">
+	<canvas id="canvasOne" width="500" height="500">
+	Your browser does not support HTML5 Canvas.
+	</canvas>
+</div>
+</body>
+</html>

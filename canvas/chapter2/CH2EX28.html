@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>垂直方向の線形グラデーションで輪郭を描く</title>
+<script src="../js/modernizr-2.0.6.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", eventWindowLoaded, false);
+
+function eventWindowLoaded(){
+	canvasApp();
+}
+
+function canvasSupport(){
+	return Modernizr.canvas;
+}
+
+function canvasApp(){
+	if(!canvasSupport()){
+		return;
+	}else{
+		var theCanvas = document.getElementById("canvasOne");
+		var context = theCanvas.getContext("2d");
+	}
+	
+	drawScreen();
+	
+	function drawScreen(){
+		
+		//yは同じ値
+		var gr = context.createLinearGradient(0, 0, 0, 100);
+		
+		//カラーストップを追加
+		gr.addColorStop(0, 'rgb(0, 0, 255)');
+		gr.addColorStop(0.5, 'rgb(0, 255, 0)');
+		gr.addColorStop(1, 'rgb(0, 0, 255)');
+		
+		//strokeStyleにグラデーションを設定
+		context.strokeStyle = gr;
+		context.beginPath();
+		context.moveTo(0, 0);
+		context.lineTo(50, 0);
+		context.lineTo(100, 50);
+		context.lineTo(50, 100);
+		context.lineTo(0, 100);
+		context.lineTo(0, 0);
+		context.stroke();
+	}
+}
+</script>
+</head>
+<body>
+<div style="position: absolute; top: 50px; left: 50px;">
+	<canvas id="canvasOne" width="500" height="500">
+	Your browser does not support HTML5 Canvas.
+	</canvas>
+</div>
+</body>
+</html>

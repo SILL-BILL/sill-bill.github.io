@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CanvasによるHelloWorld</title>
+<script src="../js/modernizr-2.0.6.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", eventWindowLoaded, false);
+
+var Debugger = function(){  };
+Debugger.log = function(message){
+	try{
+		console.log(message);
+	}catch(exception){
+		return;
+	}
+}
+
+function eventWindowLoaded(){
+	canvasApp();
+}
+
+function canvasSupport(){
+	return Modernizr.canvas;
+}
+
+function canvasApp(){
+	if(!canvasSupport()){
+		return;
+	}
+	
+	var theCanvas = document.getElementById("canvasOne");
+	var context = theCanvas.getContext("2d");
+	
+	Debugger.log("Drawing Canvas");
+	
+	function drawScreen(){
+		
+		//背景
+		context.fillStyle = "#ffffaa";
+		context.fillRect(0, 0, 500, 300);
+		
+		//テキスト
+		context.fillStyle = "#55aa55";
+		context.font = "20px _sans";
+		context.textBaseline = "top";
+		context.fillText("Hello World!", 195, 80);
+		
+		//イメージ
+		var helloWorldImage = new Image();
+		helloWorldImage.onload = function (){ 
+			context.drawImage(helloWorldImage, 160, 130);
+		}
+		helloWorldImage.src = "../img/helloworld.gif";
+		
+		//ボックス
+		context.strokeStyle = "#000000";
+		context.strokeRect(5, 5, 490, 290);
+		
+	}
+	
+	drawScreen();
+	
+}
+</script>
+</head>
+<body>
+<div style="position: absolute; top: 50px; left: 50px;">
+	<canvas id="canvasOne" width="500" height="300">
+	Your browser does not support HTML5 Canvas.
+	</canvas>
+</div>
+</body>
+</html>
