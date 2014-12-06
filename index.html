@@ -1,7 +1,39 @@
-<!DOCTYPE html>
 <html>
+<head>
+<link href="common/css/bootstrap-3.2.0.min.css" rel="stylesheet">
+<link href="common/css/ripples.min.css" rel="stylesheet">
+<link href="common/css/material-wfont.min.css" rel="stylesheet">
+</head>
 <body>
-	<h1>Hello World</h1>
-	<p>ぜあ</p>
+
+	<!-- Your site -->
+	<h1>You can add your site here.</h1>
+
+	<h2>To ensure that material-design theme is working, check out the buttons below.</h2>
+
+	<h3 class="text-muted">If you can see the ripple effect on clicking them, then you are good to go!</h3>
+
+	<p class="bs-component">
+		<a href="javascript:void(0)" class="btn btn-default">Default</a>
+		<a href="javascript:void(0)" class="btn btn-primary">Primary</a>
+		<a href="javascript:void(0)" class="btn btn-success">Success</a>
+		<a href="javascript:void(0)" class="btn btn-info">Info</a>
+		<a href="javascript:void(0)" class="btn btn-warning">Warning</a>
+		<a href="javascript:void(0)" class="btn btn-danger">Danger</a>
+		<a href="javascript:void(0)" class="btn btn-link">Link</a>
+	</p>
+
+	<!-- Your site ends -->
+
+	<script src="common/js/jquery-1.10.2.min.js"></script>
+	<script src="common/js/bootstrap-3.2.0.min.js"></script>
+	<script src="common/js/ripples.min.js"></script>
+	<script src="common/js/material.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.material.init();
+		});
+	</script>
+
 </body>
 </html>
