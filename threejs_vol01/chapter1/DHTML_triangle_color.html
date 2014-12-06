@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>三角形の描画：DHTML</title>
+<style>
+*{padding:0px; margin:0px}   
+#frame{                       /* id名をセレクタとしてスタイルを指定 */
+	width: 500px;             /* 横幅を指定 */
+	height: 500px;            /* 縦幅を指定 */
+	background-color:#EEEEEE; /* 背景色を指定 */
+}
+.square{                      /* class名をセレクタとしてスタイルを指定 */
+	position:absolute;        /* 要素の配置方法を指定 */
+}
+</style>
+<script>
+////////////////////////////////////////////////////////////////////
+// windowイベントの定義
+////////////////////////////////////////////////////////////////////
+window.addEventListener("load", function () {
+	resizeTo(516, 539);
+	for (var i = 0; i < 400 ; i++) {
+		//r値の計算
+		var r = Math.round( (400-i) / 400 * 255);
+		//div要素の生成
+		var div = document.createElement('div');
+		//div要素にclass属性を
+		div.className    = "square";
+		//div要素の縦幅と横幅を指定
+		div.style.height = "1px";    //縦幅
+		div.style.width  = i + "px"; //横幅
+		div.style.backgroundColor = "rgb(" + r   + ", 0,0)";
+		//div要素の位置を指定
+		div.style.top    = 50 + i + "px";        //上からの位置
+		div.style.left   = 250 - i / 2 + "px";   //左からの位置
+		//div要素を親要素に配置する
+		document.getElementById('frame').appendChild(div);
+	}
+});
+</script>
+</head>
+<body>
+<div id="frame"></div>
+</body>
+</html>

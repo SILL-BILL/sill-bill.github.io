@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Canvas 2D Context：三角形の描画</title>
+<style>
+*{padding:0px; margin:0px}
+#canvas_test{                /* id名をセレクタとしてスタイルを指定 */
+	width: 500px;              /* 横幅を指定 */
+	height: 500px;             /* 縦幅を指定 */
+	background-color:#EEEEEE;  /* 背景色を指定 */
+}
+</style>
+<script>
+	////////////////////////////////////////////////////////////////////
+	// windowイベントの定義
+	////////////////////////////////////////////////////////////////////
+	//HTML文書読み込み完了後に実行するイベントの定義
+	window.addEventListener('load', function () {
+		resizeTo(518, 541); //ウィンドウサイズの指定
+		drawStart();        //描画開始関数
+	});
+	////////////////////////////////////////////////////////////////////
+	// 描画開始関数の定義
+	////////////////////////////////////////////////////////////////////
+	function drawStart() {
+		var canvasElement = document.getElementById('canvas_test');  //canvas要素の取得
+		canvasElement.width = canvasElement.clientWidth;             //描画横幅の指定
+		canvasElement.height = canvasElement.clientHeight;           //描画縦幅の指定
+		var context = canvasElement.getContext('2d');                //コンテキストの取得
+		//パスの設定
+		context.beginPath();             //パスの開始
+		context.moveTo(250, 50);         //パスの始点の指定
+		context.lineTo(50, 450);         //次の座標までパスを引く
+		context.lineTo(450, 450);        //次の座標までパスを引く
+		context.closePath();             //パスの終了
+		//線の設定
+		context.strokeStyle = '#FF0000'; //線色の指定
+		context.lineWidth = 10;          //線幅の指定
+		context.stroke();                //線の描画
+		//塗りの設定
+		context.fillStyle = 'blue';   //塗りつぶし色の指定
+		context.fill();               //塗りつぶしの実行
+	}
+</script>
+</head>
+<body>
+<canvas id="canvas_test"></canvas>
+</body>
+</html>

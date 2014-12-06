@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>三角形の描画：WebGL</title>
+<script src="../javascript/glMatrix-0.9.5.min.js"></script>
+<style>
+*{padding:0px; margin:0px}
+canvas#frame{
+	width: 500px;              /* 横幅を指定 */
+	height: 500px;             /* 縦幅を指定 */
+}
+</style>
+<script id="shader-vs" type="x-shader/x-vertex">
+	//バーテックス・シェーダ
+	attribute vec3 aVertexPosition; //WebGL中で定義されたattribute変数(頂点座標)
+	attribute vec4 aVertexColor;    //WebGL中で定義されたattribute変数（頂点色）
+
+	uniform mat4 uMVMatrix;         //WebGL中で定義されたuniform変数(モデルビュー行列)
+	uniform mat4 uPMatrix;          //WebGL中で定義されたuniform変数(プロジェクション行列)
+
+	varying vec4 vColor;            //フラグメントシェーダに送るvarying変数（vColor）
+
+	void main(void) {
+		gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+		vColor = aVertexColor;
+	}
+</script>
+<script id="shader-fs" type="x-shader/x-fragment">
+	//フラグメントシェーダ
+	precision mediump float;
+	varying vec4 vColor; //バーテックスシェーダから受け渡される変数
+	void main(void) {
+		gl_FragColor = vColor;
+	}
+</script>
+<script>
+	////////////////////////////////////////////////////////////////////
+	// windowイベントの定義
+	////////////////////////////////////////////////////////////////////
+	window.addEventListener("load", function () {
+		resizeTo(516, 541);
+		webGLStart();
+	});
+
+	////////////////////////////////////////////////////////////////////
+	// 描画開始関数の定義
+	////////////////////////////////////////////////////////////////////
+	function webGLStart() {
+		var canvas = document.getElementById("frame");
+		canvas.width = canvas.clientWidth;     //描画横幅の指定
+		canvas.height = canvas.clientHeight;   //描画縦幅の指定
+		initGL(canvas);
+		initialize();
+		display();
+	}
+
+	////////////////////////////////////////////////////////////////////
+	// WebGLの初期化
+	////////////////////////////////////////////////////////////////////
+	var gl; //WebGLコンテクストオブジェクト
+	function initGL(canvas) {
+		try {
+			gl = canvas.getContext("experimental-webgl");
+			gl.viewportWidth = canvas.width;
+			gl.viewportHeight = canvas.height;
+		} catch (e) {}
+		if (!gl) {
+			alert("コンテキストの取得に失敗しました");
+		}
+	}
+	//シェーダーの準備
+	function getShader(gl, id) { //シェーダの読み込み
+		var shaderScript = document.getElementById(id); //
+		if (!shaderScript) {
+			return null;
+		}
+		var str = "";
+		var k = shaderScript.firstChild; 
+		while (k) {//シェーダ言語の読み込み
+			if (k.nodeType == 3) {
+				str += k.textContent;
+			}
+			k = k.nextSibling;
+		}
+		//シェーダーオブジェクト
+		var shader;
+		if (shaderScript.type == "x-shader/x-fragment") {
+			shader = gl.createShader(gl.FRAGMENT_SHADER);
+		} else if (shaderScript.type == "x-shader/x-vertex") {
+			shader = gl.createShader(gl.VERTEX_SHADER);
+		} else {
+			return null;
+		}
+		//シェーダープログラムソースの読み込み
+		gl.shaderSource(shader, str);
+		// シェーダーのコンパイル
+		gl.compileShader(shader);
+		//コンパイルエラーの場合の処理
+		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+			console.log(gl.getShaderInfoLog(shader));
+			return null;
+		}
+		return shader;
+	}
+
+	//シェーダープログラムオブジェクト
+	var shaderProgram;
+	//モデルビュー行列
+	var mvMatrix = mat4.create();
+	//プロジェクション行列
+	var pMatrix = mat4.create();
+
+	////////////////////////////////////////////////////////////////////
+	// 各種バッファーの初期化
+	////////////////////////////////////////////////////////////////////
+	//バッファー
+	var positionBuffer; //頂点位置
+	var colorBuffer;    //頂点色
+	var indexBuffer;    //インデックス
+	function initialize() {
+		//シェーダー
+		var fragmentShader = getShader(gl, "shader-fs");
+		var vertexShader = getShader(gl, "shader-vs");
+
+		//シェーダープログラムの生成
+		shaderProgram = gl.createProgram();
+		gl.attachShader(shaderProgram, fragmentShader);
+		gl.attachShader(shaderProgram, vertexShader);
+		//シェーダープログラムをリンク
+		gl.linkProgram(shaderProgram);
+
+		if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+			alert("Could not initialise shaders");
+		}
+		// シェーダプログラムの適用
+		gl.useProgram(shaderProgram);
+
+		//バーテックスシェーダで利用するattribut変数（頂点位置）を宣言する
+		shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+		gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+		//バーテックスシェーダで利用するattribut変数（カラー変数）を宣言する
+		shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+		gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+		//バーテックスシェーダで利用するuniform変数を宣言する
+		shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+		shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+
+		//////////////////三角形のバッファ/////////////////////////////
+		//頂点バッファ―の設定
+		vertexPositionBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+		var vertices = [
+			-45, -45, 0,
+			 45, -45, 0,
+			  0,  45, 0
+		];
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+		vertexPositionBuffer.itemSize = 3;
+		vertexPositionBuffer.numItems = 3;
+
+		//カラーバッファ―の設定
+		vertexColorBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+		var colors = [
+			1.0, 0.0, 0.0, 1.0,
+			0.0, 1.0, 0.0, 1.0,
+			0.0, 0.0, 1.0, 1.0
+		];
+		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+		vertexColorBuffer.itemSize = 4;
+		vertexColorBuffer.numItems = 3;
+
+		//インデックスバッファ―の設定
+		vertexIndexBuffer = gl.createBuffer();
+		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexIndexBuffer);
+		var indices = [
+			0, 1, 2
+		];
+		gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+		vertexIndexBuffer.itemSize = 1;
+		vertexIndexBuffer.numItems = 3;
+
+		//クリアーカラーの設定
+		gl.clearColor(0.93, 0.93, 0.93, 1.0);
+		//デプステストの有効化
+		gl.enable(gl.DEPTH_TEST);
+		//ビューポートの設定
+		gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+
+		//プロジェクション行列の設定
+		mat4.identity(pMatrix);
+		mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0, pMatrix);
+		//モデルビュー行列の設定
+		mat4.identity(mvMatrix);
+		mat4.lookAt(
+			vec3.create([  0, 0, 130 ]), //カメラの位置座標
+			vec3.create([  0, 0, 0 ]),   //カメラの視野中心座標
+			vec3.create([  0, 1, 0 ]),   //カメラの上座標
+			mvMatrix
+		);
+	}
+
+	///////////////////////////////////////////////
+	//三角形の描画
+	/////////////////////////////////////////////// 
+	function display() {
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);
+		gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, vertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexColorBuffer);
+		gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, vertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexIndexBuffer);
+		//uniform型変数の値を設定する
+		gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);   //プロジェクション行列
+		gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix); //モデルビュー行列
+
+		//インデックスバッファーを使って描画する
+		gl.drawElements(gl.TRIANGLES, vertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+	}
+</script>
+</head>
+<body>
+	 <canvas id="frame" ></canvas>
+</body>
+</html>
