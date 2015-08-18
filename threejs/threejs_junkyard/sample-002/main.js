@@ -4,7 +4,6 @@
 
 var camera, scene, renderer;
 var mesh;
-var stats;
 
 init();
 animate();
@@ -15,10 +14,6 @@ function init() {
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
-
-	// set stats
-	setStats();
-	// ----------
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 400;
@@ -57,16 +52,4 @@ function animate() {
 
 	renderer.render( scene, camera );
 
-}
-
-/*
-* FPSモニタをセットする関数
-* @info 左上に表示するようCSSを記述してbody直下に表示
-*/
-function setStats(){
-	stats = new Stats();
-	stats.domElement.style.position = 'absolute';
-	stats.domElement.style.top = '0px';
-	stats.domElement.style.zIndex = 100;
-	document.body.appendChild(stats.domElement);
 }
