@@ -11,14 +11,17 @@ animate();
 
 function init() {
 
+	//WebGL対応しているかCheck!
+	if(!Detector.webgl) Detector.addGetWebGLMessage();
+
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
-	// set stats
+	// set stats ---
 	setStats();
-	// ----------
+	// -------------
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 400;
