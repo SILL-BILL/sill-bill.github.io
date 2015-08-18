@@ -24,36 +24,40 @@ function init() {
 	setStats();
 	// -------------
 
+	// camera
 	camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.set( -5, -5, 5 );
 	camera.up.set( 0, 0, 1 );
 
 	scene = new THREE.Scene();
 
+	// light
 	var light = new THREE.DirectionalLight( 0xffffff, 1.5 );
 	light.position.set( 0, -4, -4 ).normalize();
 	scene.add(light);
 
+	// collada load and Add
 	var loader = new THREE.ColladaLoader();
-		loader.load("../three.js_r71/models/collada/avatar.dae", function(collada){
+	loader.load("../three.js_r71/models/collada/avatar.dae", function(collada){
 
-			collada.scene.traverse(function(child){
+		collada.scene.traverse(function(child){
 
-				if(child instanceof THREE.SkinnedMesh){
+			if(child instanceof THREE.SkinnedMesh){
 
-					var animation = new THREE.Animation(child, child.geometry.animation);
-					animation.play();
+				var animation = new THREE.Animation(child, child.geometry.animation);
+				animation.play();
 
-					camera.lookAt(child.position);
+				camera.lookAt(child.position);
 
-				}
-
-			});
-
-			scene.add( collada.scene );
+			}
 
 		});
 
+		scene.add( collada.scene );
+
+	});
+
+	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
 
 }
