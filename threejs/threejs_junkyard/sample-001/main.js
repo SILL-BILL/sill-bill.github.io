@@ -22,7 +22,7 @@ function init() {
 
 	var geometry = new THREE.BoxGeometry( 200, 200, 200 );
 
-	var texture = THREE.ImageUtils.loadTexture( 'textures/crate.gif' );
+	var texture = THREE.ImageUtils.loadTexture( '../three.js_r71/textures/crate.gif' );
 	texture.anisotropy = renderer.getMaxAnisotropy();
 
 	var material = new THREE.MeshBasicMaterial( { map: texture } );
