@@ -29,7 +29,7 @@ function init() {
 	scene = new THREE.Scene();
 
 	var loader = new THREE.ColladaLoader();
-		loader.load( "../three.js_r71/models/collada/avatar.dae", function ( collada ) {
+		loader.load("../three.js_r71/models/collada/avatar.dae", function(collada){
 
 			collada.scene.traverse(function(child){
 
