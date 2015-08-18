@@ -11,7 +11,7 @@ animate();
 
 function init() {
 
-	//WebGL対応しているかCheck!
+	//ブラウザがWebGLに対応しているかCheck!
 	if(!Detector.webgl) Detector.addGetWebGLMessage();
 
 	renderer = new THREE.WebGLRenderer();
@@ -23,20 +23,30 @@ function init() {
 	setStats();
 	// -------------
 
-	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
+	camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
 	camera.position.z = 400;
 
 	scene = new THREE.Scene();
 
-	var geometry = new THREE.BoxGeometry( 200, 200, 200 );
+	var loader = new THREE.ColladaLoader();
+		loader.load( "../three.js_r71/models/collada/avatar.dae", function ( collada ) {
 
-	var texture = THREE.ImageUtils.loadTexture( '../three.js_r71/textures/crate.gif' );
-	texture.anisotropy = renderer.getMaxAnisotropy();
+			collada.scene.traverse(function(child){
 
-	var material = new THREE.MeshBasicMaterial( { map: texture } );
+				if(child instanceof THREE.SkinnedMesh){
 
-	mesh = new THREE.Mesh(geometry, material);
-	scene.add( mesh );
+					var animation = new THREE.Animation(child, child.geometry.animation);
+					animation.play();
+
+					camera.lookAt(child.position);
+
+				}
+
+			});
+
+			scene.add( collada.scene );
+
+		});
 
 	window.addEventListener('resize', onWindowResize, false);
 
@@ -47,7 +57,7 @@ function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize(window.innerWidth, window.innerHeight);
 
 }
 
