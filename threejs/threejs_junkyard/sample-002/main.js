@@ -23,10 +23,15 @@ function init() {
 	setStats();
 	// -------------
 
-	camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
-	camera.position.z = 900;
+	camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.set( -5, -5, 5 );
+	camera.up.set( 0, 0, 1 );
 
 	scene = new THREE.Scene();
+
+	var light = new THREE.DirectionalLight( 0xffffff, 1.5 );
+	light.position.set( 0, -4, -4 ).normalize();
+	scene.add( light );
 
 	var loader = new THREE.ColladaLoader();
 		loader.load("../three.js_r71/models/collada/avatar.dae", function(collada){
