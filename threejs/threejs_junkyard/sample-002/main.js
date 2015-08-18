@@ -2,17 +2,18 @@
 * main.js
 */
 
+//ブラウザがWebGLに対応しているかCheck!
+if(!Detector.webgl) Detector.addGetWebGLMessage();
+
 var camera, scene, renderer;
 var mesh;
 var stats;
+var clock = new THREE.Clock();
 
 init();
 animate();
 
 function init() {
-
-	//ブラウザがWebGLに対応しているかCheck!
-	if(!Detector.webgl) Detector.addGetWebGLMessage();
 
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
@@ -31,7 +32,7 @@ function init() {
 
 	var light = new THREE.DirectionalLight( 0xffffff, 1.5 );
 	light.position.set( 0, -4, -4 ).normalize();
-	scene.add( light );
+	scene.add(light);
 
 	var loader = new THREE.ColladaLoader();
 		loader.load("../three.js_r71/models/collada/avatar.dae", function(collada){
@@ -68,9 +69,11 @@ function onWindowResize() {
 
 function animate() {
 
-	requestAnimationFrame( animate );
+	requestAnimationFrame(animate);
 
-	renderer.render( scene, camera );
+	THREE.AnimationHandler.update(clock.getDelta());
+
+	renderer.render(scene, camera);
 
 	stats.update();
 
