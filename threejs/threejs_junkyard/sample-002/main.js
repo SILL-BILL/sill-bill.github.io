@@ -4,16 +4,24 @@
 
 var camera, scene, renderer;
 var mesh;
+var stats;
 
 init();
 animate();
 
 function init() {
 
+	//WebGL対応しているかCheck!
+	if(!Detector.webgl) Detector.addGetWebGLMessage();
+
 	renderer = new THREE.WebGLRenderer();
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
+
+	// set stats ---
+	setStats();
+	// -------------
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 400;
@@ -27,10 +35,10 @@ function init() {
 
 	var material = new THREE.MeshBasicMaterial( { map: texture } );
 
-	mesh = new THREE.Mesh( geometry, material );
+	mesh = new THREE.Mesh(geometry, material);
 	scene.add( mesh );
 
-	window.addEventListener( 'resize', onWindowResize, false );
+	window.addEventListener('resize', onWindowResize, false);
 
 }
 
@@ -52,4 +60,18 @@ function animate() {
 
 	renderer.render( scene, camera );
 
+	stats.update();
+
+}
+
+/*
+* FPSモニタをセットする関数
+* @info 左上に表示するようCSSを記述してbody直下に表示
+*/
+function setStats(){
+	stats = new Stats();
+	stats.domElement.style.position = 'absolute';
+	stats.domElement.style.top = '0px';
+	stats.domElement.style.zIndex = 100;
+	document.body.appendChild(stats.domElement);
 }
