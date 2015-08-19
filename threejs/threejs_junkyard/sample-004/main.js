@@ -35,7 +35,7 @@ function init() {
 	geometry.applyMatrix( new THREE.Matrix4().makeScale(-1, 1, 1));
 
 	var material = new THREE.MeshBasicMaterial( {
-		map: THREE.ImageUtils.loadTexture( '../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
+		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
 	} );
 
 	var mesh = new THREE.Mesh(geometry, material);
