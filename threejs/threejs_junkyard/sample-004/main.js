@@ -37,6 +37,8 @@ function init() {
 		map: THREE.ImageUtils.loadTexture( '../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
 	} );
 
+	var mesh = new THREE.Mesh(geometry, material);
+	scene.add(mesh);
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
