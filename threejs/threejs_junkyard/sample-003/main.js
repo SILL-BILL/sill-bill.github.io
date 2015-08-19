@@ -9,6 +9,7 @@ var camera, scene, renderer;
 var mesh;
 var stats;
 var clock = new THREE.Clock();
+var controls;
 
 init();
 animate();
@@ -16,24 +17,51 @@ animate();
 function init() {
 
 	renderer = new THREE.WebGLRenderer();
-	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.body.appendChild( renderer.domElement );
+	renderer.setPixelRatio(window.devicePixelRatio);
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	document.body.appendChild(renderer.domElement);
 
 	// set stats ---
 	setStats();
 	// -------------
 
 	// camera
-	camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 10000 );
-	camera.position.set( -5, -5, 5 );
-	camera.up.set( 0, 0, 1 );
+	camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 10000);
+	camera.position.set(-5, -5, 5);
+	camera.up.set(0, 0, 1);
+
+	//トラックボールオブジェクトの宣言
+	controls = new THREE.TrackballControls(camera);
+	
+	//トラックボールの回転無効化と回転速度の設定
+	controls.noRotate = false;
+	controls.rotateSpeed = 4.0;
+	
+	//トラックボールの拡大無効化と拡大速度の設定
+	controls.noZoom = false;
+	controls.zoomSpeed = 4.0;
+	
+	//トラックボールのカメラ中心移動の無効化と中心速度の設定
+	controls.noPan = false;
+	controls.panSpeed = 1.0;
+	controls.target = new THREE.Vector3(0, 0, 0);
+	
+	//トラックボールのスタティックムーブの有効化
+	controls.staticMoving = true;
+	//トラックボールのダイナミックムーブ時の減衰定数
+	controls.dynamicDampingFactor = 0.3;
+
+	controls.addEventListener('change', render);
 
 	scene = new THREE.Scene();
 
-	// light
-	var light = new THREE.DirectionalLight( 0xffffff, 1.5 );
-	light.position.set( 0, -4, -4 ).normalize();
+	// lights
+
+	var light = new THREE.DirectionalLight(0xffffff);
+	light.position.set(0, -4, -4);
+	scene.add(light);
+
+	light = new THREE.AmbientLight(0x222222);
 	scene.add(light);
 
 	// collada load & Add
@@ -47,18 +75,20 @@ function init() {
 				var animation = new THREE.Animation(child, child.geometry.animation);
 				animation.play();
 
-				camera.lookAt(child.position);
+//				camera.lookAt(child.position);
 
 			}
 
 		});
 
-		scene.add( collada.scene );
+		scene.add(collada.scene);
 
 	});
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
+
+	render();
 
 }
 
@@ -69,16 +99,23 @@ function onWindowResize() {
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
+	controls.handleResize();
+
+	render();
+
 }
 
 function animate() {
 
 	requestAnimationFrame(animate);
-
 	THREE.AnimationHandler.update(clock.getDelta());
+	controls.update();
+
+}
+
+function render(){
 
 	renderer.render(scene, camera);
-
 	stats.update();
 
 }
