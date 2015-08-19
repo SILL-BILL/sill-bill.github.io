@@ -110,6 +110,7 @@ function animate() {
 	requestAnimationFrame(animate);
 	THREE.AnimationHandler.update(clock.getDelta());
 	controls.update();
+	render();
 
 }
 
