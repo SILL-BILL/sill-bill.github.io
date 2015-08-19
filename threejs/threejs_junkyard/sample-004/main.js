@@ -32,7 +32,7 @@ function init() {
 	scene = new THREE.Scene();
 
 	var geometry = new THREE.SphereGeometry(500, 16, 8);
-//	geometry.applyMatrix( new THREE.Matrix4().makeScale(-1, 1, 1));
+	geometry.applyMatrix( new THREE.Matrix4().makeScale(-1, 1, 1));
 
 	var material = new THREE.MeshBasicMaterial( {
 		map: THREE.ImageUtils.loadTexture( '../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
