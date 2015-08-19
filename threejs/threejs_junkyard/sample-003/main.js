@@ -57,16 +57,17 @@ function init() {
 
 	// lights
 
-	var light = new THREE.DirectionalLight(0xffffff);
+
+	var light = new THREE.DirectionalLight( 0xffffff );
+	light.position.set(0, -4, -4);
+	scene.add( light );
+
+	light = new THREE.DirectionalLight( 0x002288 );
 	light.position.set(1, 1, 1);
-	scene.add(light);
+	scene.add( light );
 
-	light = new THREE.DirectionalLight(0x002288);
-	light.position.set(-1, -1, -1);
-	scene.add(light);
-
-	light = new THREE.AmbientLight(0x222222);
-	scene.add(light);
+	light = new THREE.AmbientLight( 0x222222 );
+	scene.add( light );
 
 	// collada load & Add
 	var loader = new THREE.ColladaLoader();
