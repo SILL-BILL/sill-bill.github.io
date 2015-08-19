@@ -110,6 +110,7 @@ function animate() {
 	requestAnimationFrame(animate);
 	THREE.AnimationHandler.update(clock.getDelta());
 	controls.update();
+	stats.update();
 	render();
 
 }
@@ -117,7 +118,6 @@ function animate() {
 function render(){
 
 	renderer.render(scene, camera);
-	stats.update();
 
 }
 
