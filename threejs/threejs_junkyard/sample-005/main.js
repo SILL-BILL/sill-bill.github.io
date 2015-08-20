@@ -6,7 +6,7 @@
 if(!Detector.webgl) Detector.addGetWebGLMessage();
 
 var camera, scene, renderer;
-var mesh, geometry, icoshedron;
+var mesh, geometry, icosahedron;
 var effect;
 var stats;
 var controls;
@@ -41,12 +41,12 @@ function init() {
 	mesh = new THREE.Mesh(geometry, material);
 	scene.add(mesh);
 
-	//icoshedron
-	geometry = new THREE.IcoshedronGeometry(80);
+	//icosahedron
+	geometry = new THREE.IcosahedronGeometry(80);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
-	icoshedron = new THREE.Mesh(geometry, material);
-	icoshedron.position.z = 200;
-	scene.add(icoshedron);
+	icosahedron = new THREE.Mesh(geometry, material);
+	icosahedron.position.z = 200;
+	scene.add(icosahedron);
 
 	//effects
 	effect = new THREE.StereoEffect( renderer );
@@ -75,8 +75,8 @@ function animate() {
 
 	requestAnimationFrame(animate);
 
-	icoshedron.rotation.x += 0.005;
-	icoshedron.rotation.y += 0.01;
+	icosahedron.rotation.x += 0.005;
+	icosahedron.rotation.y += 0.01;
 
 	controls.update();
 
