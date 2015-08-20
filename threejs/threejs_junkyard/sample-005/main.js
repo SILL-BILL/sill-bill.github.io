@@ -6,7 +6,7 @@
 if(!Detector.webgl) Detector.addGetWebGLMessage();
 
 var camera, scene, renderer;
-var mesh, geometry;
+var mesh, geometry, octahedron;
 var effect;
 var stats;
 var controls;
@@ -42,10 +42,11 @@ function init() {
 	scene.add(mesh);
 
 	//octahedron
-	geometry = new THREE.OctahedronGeometry(100);
-	material = new THREE.MeshBasicMaterial({ wireframe: true, wireframeLinewidth:3 });
-	mesh = new THREE.Mesh(geometry, material);
-	scene.add(mesh);
+	geometry = new THREE.OctahedronGeometry(50);
+	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
+	octahedron = new THREE.Mesh(geometry, material);
+	octahedron.position.z = 200;
+	scene.add(octahedron);
 
 	//effects
 	effect = new THREE.StereoEffect( renderer );
@@ -64,7 +65,7 @@ function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	effect.setSize(window.innerWidth, window.innerHeight);
 
 	render();
 
@@ -73,15 +74,21 @@ function onWindowResize() {
 function animate() {
 
 	requestAnimationFrame(animate);
+
+	octahedron.rotation.x += 0.005;
+	octahedron.rotation.y += 0.01;
+
 	controls.update();
+
 	stats.update();
+
 	render();
 
 }
 
 function render(){
 
-	renderer.render(scene, camera);
+	effect.render(scene, camera);
 
 }
 
