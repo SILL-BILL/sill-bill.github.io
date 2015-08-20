@@ -7,6 +7,7 @@ if(!Detector.webgl) Detector.addGetWebGLMessage();
 
 var camera, scene, renderer;
 var mesh, geometry;
+var effect;
 var stats;
 var controls;
 
@@ -31,15 +32,25 @@ function init() {
 
 	scene = new THREE.Scene();
 
-	var geometry = new THREE.SphereGeometry(500, 16, 8);
+	//sphere(background)
+	geometry = new THREE.SphereGeometry(500, 16, 8);
 	geometry.applyMatrix( new THREE.Matrix4().makeScale(-1, 1, 1));
-
-	var material = new THREE.MeshBasicMaterial( {
+	material = new THREE.MeshBasicMaterial({
 		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
-	} );
-
-	var mesh = new THREE.Mesh(geometry, material);
+	});
+	mesh = new THREE.Mesh(geometry, material);
 	scene.add(mesh);
+
+	//octahedron
+	geometry = new THREE.OctahedronGeometry(100);
+	material = new THREE.MeshBasicMaterial({ wireframe: true, wireframeLinewidth:3 });
+	mesh = new THREE.Mesh(geometry, material);
+	scene.add(mesh);
+
+	//effects
+	effect = new THREE.StereoEffect( renderer );
+	effect.eyeSeparation = 10;
+	effect.setSize( window.innerWidth, window.innerHeight );
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
