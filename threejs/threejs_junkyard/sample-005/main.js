@@ -42,7 +42,7 @@ function init() {
 	scene.add(mesh);
 
 	//octahedron
-	geometry = new THREE.OctahedronGeometry(50);
+	geometry = new THREE.OctahedronGeometry(150);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	octahedron = new THREE.Mesh(geometry, material);
 	octahedron.position.z = 200;
