@@ -58,14 +58,14 @@ function init() {
 }
 
 function fullscreen() {
-	if (window.requestFullscreen) {
-		window.requestFullscreen();
-	} else if (window.msRequestFullscreen) {
-		window.msRequestFullscreen();
-	} else if (window.mozRequestFullScreen) {
-		window.mozRequestFullScreen();
-	} else if (window.webkitRequestFullscreen) {
-		window.webkitRequestFullscreen();
+	if (renderer.domElement.requestFullscreen) {
+		renderer.domElement.requestFullscreen();
+	} else if (renderer.domElement.msRequestFullscreen) {
+		renderer.domElement.msRequestFullscreen();
+	} else if (renderer.domElement.mozRequestFullScreen) {
+		renderer.domElement.mozRequestFullScreen();
+	} else if (renderer.domElement.webkitRequestFullscreen) {
+		renderer.domElement.webkitRequestFullscreen();
 	}
 }
 
