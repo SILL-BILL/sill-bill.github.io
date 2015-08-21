@@ -59,13 +59,13 @@ function init() {
 
 function fullscreen() {
 	if (window.requestFullscreen) {
-		container.requestFullscreen();
-	} else if (container.msRequestFullscreen) {
-		container.msRequestFullscreen();
-	} else if (container.mozRequestFullScreen) {
-		container.mozRequestFullScreen();
-	} else if (container.webkitRequestFullscreen) {
-		container.webkitRequestFullscreen();
+		window.requestFullscreen();
+	} else if (window.msRequestFullscreen) {
+		window.msRequestFullscreen();
+	} else if (window.mozRequestFullScreen) {
+		window.mozRequestFullScreen();
+	} else if (window.webkitRequestFullscreen) {
+		window.webkitRequestFullscreen();
 	}
 }
 
