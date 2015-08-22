@@ -31,6 +31,14 @@ function init() {
 
 	scene = new THREE.Scene();
 
+	// lights
+	var light = new THREE.PointLight(0xffffff, 1, 500);
+	light.position.set(0, 10, 0);
+	scene.add( light );
+
+	light = new THREE.AmbientLight( 0x222222 );
+	scene.add( light );
+
 	//sphere(background)
 	// collada load & Add
 	var loader = new THREE.ColladaLoader();
