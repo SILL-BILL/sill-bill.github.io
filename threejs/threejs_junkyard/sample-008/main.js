@@ -32,19 +32,17 @@ function init() {
 	scene = new THREE.Scene();
 
 	//sphere(background)
-	geometry = new THREE.SphereGeometry(500, 16, 8);
-	geometry.applyMatrix( new THREE.Matrix4().makeScale(-1, 1, 1));
-	material = new THREE.MeshBasicMaterial({
-		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/2294472375_24a3b8ef46_o.jpg')
+	// collada load & Add
+	var loader = new THREE.ColladaLoader();
+	loader.load("../three.js_r71/models/collada/fukuya/fukuya_low.dae", function(collada){
+		scene.add(collada.scene);
 	});
-	mesh = new THREE.Mesh(geometry, material);
-	scene.add(mesh);
 
 	//icosahedron
-	geometry = new THREE.IcosahedronGeometry(80);
+	geometry = new THREE.IcosahedronGeometry(30);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
-	icosahedron.position.z = 200;
+	icosahedron.position.z = 30;
 	scene.add(icosahedron);
 
 	//windowをクリック時にフルスクリーン
