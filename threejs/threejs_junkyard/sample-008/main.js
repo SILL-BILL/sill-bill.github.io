@@ -46,6 +46,7 @@ function init() {
 
 		scene.add(collada.scene);
 
+/* model rotate */
 collada.scene.rotation.z = (90 * (Math.PI / 180));
 console.dir(collada);
 
