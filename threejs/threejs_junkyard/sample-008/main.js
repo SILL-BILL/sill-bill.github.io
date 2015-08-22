@@ -43,11 +43,12 @@ function init() {
 	// collada load & Add
 	var loader = new THREE.ColladaLoader();
 	loader.load("../three.js_r71/models/collada/fukuya/fukuya_low.dae", function(collada){
+		collada.rotation.z = (90 * (Math.PI / 180));
 		scene.add(collada.scene);
 	});
 
 	//icosahedron
-	geometry = new THREE.IcosahedronGeometry(30);
+	geometry = new THREE.IcosahedronGeometry(10);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
 	icosahedron.position.z = 30;
