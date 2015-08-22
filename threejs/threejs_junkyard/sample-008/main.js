@@ -9,6 +9,7 @@ var camera, scene, renderer;
 var mesh, geometry, icosahedron;
 var stats;
 var controls;
+var collada;
 
 init();
 animate();
@@ -43,9 +44,9 @@ function init() {
 	// collada load & Add
 	var loader = new THREE.ColladaLoader();
 	loader.load("../three.js_r71/models/collada/fukuya/fukuya_low.dae", function(collada){
-		collada.rotation.z = (90 * (Math.PI / 180));
 		scene.add(collada.scene);
 	});
+	collada.rotation.z = (90 * (Math.PI / 180));
 
 	//icosahedron
 	geometry = new THREE.IcosahedronGeometry(10);
