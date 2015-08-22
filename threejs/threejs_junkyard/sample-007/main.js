@@ -27,7 +27,8 @@ function init() {
 
 	// camera
 	camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 10000);
-	camera.position.set(-5, -5, 5);
+/*	camera.position.set(-5, -5, 5); */
+	camera.position.set(0, 0, 0);
 	camera.up.set(0, 0, 1);
 
 	//トラックボールオブジェクトの宣言
