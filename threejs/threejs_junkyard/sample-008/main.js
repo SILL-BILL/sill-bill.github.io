@@ -98,7 +98,7 @@ function animate() {
 	icosahedron.rotation.x += 0.005;
 	icosahedron.rotation.y += 0.01;
 
-	controls.update();
+//	controls.update();
 
 	stats.update();
 
