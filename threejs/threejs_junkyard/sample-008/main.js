@@ -45,7 +45,7 @@ function init() {
 	loader.load("../three.js_r71/models/collada/fukuya/fukuya_low.dae", function(collada){
 
 console.dir(collada);
-
+collada.scene.rotation.z = (90 * (Math.PI / 180));
 //		collada.rotation.z = (90 * (Math.PI / 180));
 		scene.add(collada.scene);
 	});
