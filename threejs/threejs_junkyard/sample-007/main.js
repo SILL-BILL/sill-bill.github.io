@@ -59,11 +59,11 @@ function init() {
 
 
 	var light = new THREE.DirectionalLight( 0xffffff );
-	light.position.set(0, -4, -4);
+	light.position.set(4, 4, 4);
 	scene.add( light );
 
 	light = new THREE.DirectionalLight( 0x002288 );
-	light.position.set(1, 1, 1);
+	light.position.set(-4, -4, -4);
 	scene.add( light );
 
 	light = new THREE.AmbientLight( 0x222222 );
