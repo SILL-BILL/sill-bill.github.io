@@ -58,8 +58,8 @@ function init() {
 	// lights
 
 
-	var light = new THREE.PointLight(0xff0000, 1, 100);
-	light.position.set(0, 1, 0);
+	var light = new THREE.PointLight(0xff0000, 1, 500);
+	light.position.set(0, 10, 0);
 	scene.add( light );
 /*
 	light = new THREE.DirectionalLight( 0x002288 );
