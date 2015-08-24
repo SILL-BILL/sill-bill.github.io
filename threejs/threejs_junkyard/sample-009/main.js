@@ -30,8 +30,8 @@ function init() {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
 
-	camera.position.set(500, 500, 500);
-//	camera.position.set(0, 0, 100);
+//	camera.position.set(500, 500, 500);
+	camera.position.set(0, 0, 100);
 	camera.lookAt({x:0,y:0,z:0});
 
 	//デバイス
@@ -108,13 +108,15 @@ function init() {
 	video.height = 480;
 	video.autoplay = true;
 	video.loop = true;
-	video.src = "../three.js_r71/textures/led/led.mp4";
+	video.src = "../three.js_r71/textures/led/led.webm";
 
 	var texture = new THREE.VideoTexture(video);
 	texture.minFilter = THREE.LinearFilter;
 
 	//plane
-	plane = new THREE.Mesh( new THREE.PlaneGeometry(150, 50), new THREE.MeshLambertMaterial({map:texture}));
+	plane = new THREE.Mesh(new THREE.PlaneGeometry(150, 50), new THREE.MeshLambertMaterial({map:texture}));
+	plane.position.y =  50;
+	plane.position.z =  -250;
 	scene.add(plane);
 
 	//windowをクリック時にフルスクリーン
