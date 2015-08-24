@@ -29,7 +29,6 @@ function init() {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
 	camera.position.set(0, 0, 500);
-	camera.up.set(0, 0, 1);
 //	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
@@ -56,7 +55,7 @@ function init() {
 		scene.add(collada.scene);
 
 /* model rotate */
-//collada.scene.rotation.z = (90 * (Math.PI / 180));
+collada.scene.rotation.x = (90 * (Math.PI / 180));
 console.dir(collada);
 
 	});
