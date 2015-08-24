@@ -28,8 +28,8 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
-	camera.position.set( 0, 0, 500 );
-	camera.up.set(0, 1, 0);
+	camera.position.set(0, 0, 500);
+	camera.up.set(0, 0, 1);
 //	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
