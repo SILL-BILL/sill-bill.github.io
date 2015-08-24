@@ -61,7 +61,7 @@ console.dir(collada);
 	});
 
 	//icosahedron
-	geometry = new THREE.IcosahedronGeometry(30);
+	geometry = new THREE.IcosahedronGeometry(15);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
 	icosahedron.position.x = 100;
