@@ -28,10 +28,12 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
+/*
 	camera.position.set(500, 500, 500);
 	camera.lookAt({x:0,y:0,z:0});
+*/
 
-//	controls = new THREE.DeviceOrientationControls(camera);
+	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
 
@@ -67,12 +69,12 @@ function init() {
 
 /* model rotate */
 collada.scene.rotation.x = (270 * (Math.PI / 180));
-console.dir(collada);
+//console.dir(collada);
 
 	});
 
 	//icosahedron
-	geometry = new THREE.IcosahedronGeometry(20);
+	geometry = new THREE.IcosahedronGeometry(30);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
 	icosahedron.position.x = 100;
@@ -118,7 +120,7 @@ function animate() {
 	icosahedron.rotation.x += 0.005;
 	icosahedron.rotation.y += 0.01;
 
-//	controls.update();
+	controls.update();
 
 	stats.update();
 
