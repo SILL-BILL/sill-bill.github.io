@@ -28,8 +28,8 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
-//	camera.position.set(0, 0, 500);
-	controls = new THREE.DeviceOrientationControls(camera);
+	camera.position.set(500, 500, 500);
+//	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
 
@@ -43,7 +43,7 @@ function init() {
 
 
 	//軸オブジェクトの生成
-	axis = new THREE.AxisHelper(100);
+	axis = new THREE.AxisHelper(3000);
 	//軸オブジェクトのシーンへの追加
 	scene.add(axis);
 
@@ -57,6 +57,8 @@ function init() {
 /* model rotate */
 collada.scene.rotation.x = (270 * (Math.PI / 180));
 console.dir(collada);
+
+camera.lookAt(collada.position);
 
 	});
 
@@ -107,7 +109,7 @@ function animate() {
 	icosahedron.rotation.x += 0.005;
 	icosahedron.rotation.y += 0.01;
 
-	controls.update();
+//	controls.update();
 
 	stats.update();
 
