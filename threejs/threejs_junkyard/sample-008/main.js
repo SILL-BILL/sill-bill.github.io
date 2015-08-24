@@ -61,10 +61,10 @@ console.dir(collada);
 	});
 
 	//icosahedron
-	geometry = new THREE.IcosahedronGeometry(10);
+	geometry = new THREE.IcosahedronGeometry(30);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
-	icosahedron.position.z = 30;
+	icosahedron.position.x = 100;
 	scene.add(icosahedron);
 
 	//windowをクリック時にフルスクリーン
