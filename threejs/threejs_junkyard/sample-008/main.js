@@ -29,7 +29,7 @@ function init() {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
 //	camera.position.set(0, 0, 500);
-//	controls = new THREE.DeviceOrientationControls(camera);
+	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
 
@@ -107,7 +107,7 @@ function animate() {
 	icosahedron.rotation.x += 0.005;
 	icosahedron.rotation.y += 0.01;
 
-//	controls.update();
+	controls.update();
 
 	stats.update();
 
