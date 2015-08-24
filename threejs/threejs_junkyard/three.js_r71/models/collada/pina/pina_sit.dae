@@ -2,11 +2,11 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2015-08-24T12:24:08Z</created><keywords></keywords><modified>2015-08-24T12:24:08Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
   <library_images>
-    <image id="pina_eye1-image" name="pina_eye1"><init_from>file://C:/Users/CSRShimeji/Desktop/inHouse/SennyuVR/150408/pina/sourceimages/eye.tga</init_from></image>
-    <image id="pina_face1-image" name="pina_face1"><init_from>file://C:/Users/CSRShimeji/Desktop/inHouse/SennyuVR/150408/pina/sourceimages/face.tga</init_from></image>
-    <image id="pina_hair2-image" name="pina_hair2"><init_from>file://C:/Users/CSRShimeji/Desktop/inHouse/SennyuVR/150408/pina/sourceimages/hair.tga</init_from></image>
-    <image id="pina_cloth1-image" name="pina_cloth1"><init_from>file://C:/Users/CSRShimeji/Desktop/inHouse/SennyuVR/150408/pina/sourceimages/cloth.tga</init_from></image>
-    <image id="pina_body2-image" name="pina_body2"><init_from>file://C:/Users/CSRShimeji/Desktop/inHouse/SennyuVR/150408/pina/sourceimages/body.tga</init_from></image>
+    <image id="pina_eye1-image" name="pina_eye1"><init_from>eye.tga</init_from></image>
+    <image id="pina_face1-image" name="pina_face1"><init_from>face.tga</init_from></image>
+    <image id="pina_hair2-image" name="pina_hair2"><init_from>hair.tga</init_from></image>
+    <image id="pina_cloth1-image" name="pina_cloth1"><init_from>cloth.tga</init_from></image>
+    <image id="pina_body2-image" name="pina_body2"><init_from>body.tga</init_from></image>
   </library_images>
   <library_materials>
     <material id="pina_eye" name="pina_eye">
