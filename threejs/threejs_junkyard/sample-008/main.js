@@ -36,16 +36,21 @@ function init() {
 	scene = new THREE.Scene();
 
 	// lights
+/*
 	var light = new THREE.PointLight(0xffffff, 1, 500);
 	light.position.set(0, 10, 0);
 	scene.add( light );
+*/
+	var light = new THREE.DirectionalLight(0xffffff, 1.5);
+	light.position.set(3000, 3000, 3000).normalize();
+	scene.add(light);
 
 	light = new THREE.AmbientLight( 0x222222 );
 	scene.add( light );
 
 
 	//軸オブジェクトの生成
-	axis = new THREE.AxisHelper(3000);
+	axis = new THREE.AxisHelper(300);
 	//軸オブジェクトのシーンへの追加
 	scene.add(axis);
 
