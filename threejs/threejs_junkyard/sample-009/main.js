@@ -114,7 +114,7 @@ function init() {
 	texture.minFilter = THREE.LinearFilter;
 
 	//plane
-	plane = new THREE.Mesh( new THREE.PlaneGeometry(50, 50), new THREE.MeshLambertMaterial({map:texture}));
+	plane = new THREE.Mesh( new THREE.PlaneGeometry(150, 50), new THREE.MeshLambertMaterial({map:texture}));
 	scene.add(plane);
 
 	//windowをクリック時にフルスクリーン
