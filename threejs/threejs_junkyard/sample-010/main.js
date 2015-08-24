@@ -88,7 +88,7 @@ function init() {
 	// collada load & Add
 	var loader = new THREE.ColladaLoader();
 	loader.load("../three.js_r71/models/collada/pina/pina_sit.dae", function(collada){
-
+/*
 		collada.scene.traverse(function(child){
 
 			if(child instanceof THREE.SkinnedMesh){
@@ -96,12 +96,12 @@ function init() {
 				var animation = new THREE.Animation(child, child.geometry.animation);
 				animation.play();
 
-//				camera.lookAt(child.position);
+				camera.lookAt(child.position);
 
 			}
 
 		});
-
+*/
 		scene.add(collada.scene);
 
 		/* model rotate */
@@ -146,7 +146,7 @@ function animate() {
 
 	requestAnimationFrame(animate);
 
-	THREE.AnimationHandler.update(clock.getDelta());
+//	THREE.AnimationHandler.update(clock.getDelta());
 
 	controls.update();
 
