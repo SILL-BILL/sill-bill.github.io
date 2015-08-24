@@ -60,16 +60,21 @@ function init() {
 	light.position.set(0, 10, 0);
 	scene.add( light );
 */
-	var light = new THREE.DirectionalLight(0xffffff, 0.75);
-	light.position.set(-3000, 3000, 3000).normalize();
+
+	var light = new THREE.DirectionalLight(0xffffff, 0.5);
+	light.position.set(-1000, 1000, -1000).normalize();
 	scene.add(light);
 
-	var light2 = new THREE.DirectionalLight(0xffffff, 0.75);
-	light2.position.set(3000, -3000, -3000).normalize();
+	var light2 = new THREE.DirectionalLight(0xffffff, 0.4);
+	light2.position.set(1000, 1000, 1000).normalize();
 	scene.add(light2);
 
-	light = new THREE.AmbientLight( 0x222222 );
-	scene.add( light );
+	var light3 = new THREE.DirectionalLight(0xffffff, 0.2);
+	light3.position.set(-1000, -1000, -1000).normalize();
+	scene.add(light3);
+
+	light4 = new THREE.AmbientLight(0x222222);
+	scene.add(light4);
 
 
 	//軸オブジェクトの生成
