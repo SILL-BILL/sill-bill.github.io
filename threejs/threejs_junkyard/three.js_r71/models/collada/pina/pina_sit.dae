@@ -68392,8 +68392,7 @@ bone_joint35 bone_joint36 bone_joint37 bone_joint38 bone_joint39 bone_joint40 Ch
         <bind_shape_matrix>1.000000 0.000000 0.000000 -0.000000 -0.000000 1.000000 0.000000 0.000000 0.000000 -0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
 </bind_shape_matrix>
         <source id="pina_stockings_RController-Joints">
-          <Name_array id="pina_stockings_RController-Joints-array" count="3">
- Ankle_R HipPart2_R Knee_R</Name_array>
+          <Name_array id="pina_stockings_RController-Joints-array" count="3">Ankle_R HipPart2_R Knee_R</Name_array>
           <technique_common>
             <accessor source="#pina_stockings_RController-Joints-array" count="3">
               <param type="name"/>
