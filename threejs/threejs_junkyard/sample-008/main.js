@@ -9,6 +9,7 @@ var camera, scene, renderer;
 var mesh, geometry, icosahedron;
 var stats;
 var controls;
+var axis;
 
 init();
 animate();
@@ -38,6 +39,12 @@ function init() {
 
 	light = new THREE.AmbientLight( 0x222222 );
 	scene.add( light );
+
+
+	//軸オブジェクトの生成
+	axis = new THREE.AxisHelper(100);
+	//軸オブジェクトのシーンへの追加
+	scene.add(axis);
 
 	//sphere(background)
 	// collada load & Add
