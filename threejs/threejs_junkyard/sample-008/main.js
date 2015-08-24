@@ -28,7 +28,7 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
-	camera.position = new THREE.Vector3(100, 100, 100);
+	camera.position.set( 100, 100, 100 );
 //	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
@@ -72,8 +72,6 @@ console.dir(collada);
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
-
-camera.position = new THREE.Vector3(100, 100, 100);
 
 	render();
 
