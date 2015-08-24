@@ -42,7 +42,7 @@ function init() {
 	scene.add( light );
 */
 	var light = new THREE.DirectionalLight(0xffffff, 1.5);
-	light.position.set(3000, 3000, 3000).normalize();
+	light.position.set(-3000, 3000, 3000).normalize();
 	scene.add(light);
 
 	light = new THREE.AmbientLight( 0x222222 );
