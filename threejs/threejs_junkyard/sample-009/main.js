@@ -116,7 +116,7 @@ function init() {
 	//plane
 	plane = new THREE.Mesh(new THREE.PlaneGeometry(150, 50), new THREE.MeshLambertMaterial({map:texture}));
 	plane.position.y =  50;
-	plane.position.z =  -180;
+	plane.position.z =  -170;
 	scene.add(plane);
 
 	//windowをクリック時にフルスクリーン
