@@ -73,6 +73,8 @@ console.dir(collada);
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
 
+camera.position = new THREE.Vector3(100, 100, 100);
+
 	render();
 
 }
