@@ -29,28 +29,29 @@ function init() {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
 
-	camera.position.set(500, 500, 500);
-	camera.lookAt({x:0,y:0,z:0});
+//	camera.position.set(500, 500, 500);
+	camera.position.set(0, 0, 100);
+//	camera.lookAt({x:0,y:0,z:0});
 
 	//デバイス
-//	controls = new THREE.DeviceOrientationControls(camera);
+	controls = new THREE.DeviceOrientationControls(camera);
 
 	//トラックボールオブジェクトの宣言
-	controls = new THREE.TrackballControls(camera);
+//	controls = new THREE.TrackballControls(camera);
 	//トラックボールの回転無効化と回転速度の設定
-	controls.noRotate = false;
-	controls.rotateSpeed = 4.0;
+//	controls.noRotate = false;
+//	controls.rotateSpeed = 4.0;
 	//トラックボールの拡大無効化と拡大速度の設定
-	controls.noZoom = false;
-	controls.zoomSpeed = 4.0;
+//	controls.noZoom = false;
+//	controls.zoomSpeed = 4.0;
 	//トラックボールのカメラ中心移動の無効化と中心速度の設定
-	controls.noPan = false;
-	controls.panSpeed = 1.0;
-	controls.target = new THREE.Vector3(0, 0, 0);
+//	controls.noPan = false;
+//	controls.panSpeed = 1.0;
+//	controls.target = new THREE.Vector3(0, 0, 0);
 	//トラックボールのスタティックムーブの有効化
-	controls.staticMoving = true;
+//	controls.staticMoving = true;
 	//トラックボールのダイナミックムーブ時の減衰定数
-	controls.dynamicDampingFactor = 0.3;
+//	controls.dynamicDampingFactor = 0.3;
 
 	scene = new THREE.Scene();
 
@@ -95,11 +96,11 @@ collada.scene.rotation.x = (270 * (Math.PI / 180));
 
 	});
 
-	//icosahedron
+	//icosahedron(仮モデル)
 	geometry = new THREE.IcosahedronGeometry(30);
 	material = new THREE.MeshBasicMaterial({ color:0x00ffff, wireframe: true, wireframeLinewidth:3 });
 	icosahedron = new THREE.Mesh(geometry, material);
-	icosahedron.position.x = 100;
+	icosahedron.position.x = 50;
 	scene.add(icosahedron);
 
 	//windowをクリック時にフルスクリーン
