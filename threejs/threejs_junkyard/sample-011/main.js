@@ -82,7 +82,7 @@ function init() {
 	video.height = 1024;
 	video.autoplay = true;
 	video.loop = true;
-	video.src = "../three.js_r71/textures/airpano/airpano.webm";
+	video.src = "../three.js_r71/textures/spacepano/spacepano.webm";
 
 	texture = new THREE.VideoTexture(video);
 	texture.minFilter = THREE.LinearFilter;
