@@ -196,4 +196,5 @@ function setFullscreenButton() {
 	fullscreenbtn.addEventListener("click", fullscreen, false);
 
 console.dir(fullscreenbtn);
+console.dir(fullscreenbtn.getElementById);
 }
