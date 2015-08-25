@@ -183,7 +183,7 @@ function setPlayButton() {
 	playbtn.id = "playbtn";
 	playbtn.innerHTML = "Play";
 	document.body.appendChild(playbtn);
-	playbtn.addEventListener("onclick", playVideo, false);
+	playbtn.getElementById.addEventListener("click", playVideo, false);
 
 console.dir(playbtn);
 }
@@ -193,7 +193,7 @@ function setFullscreenButton() {
 	fullscreenbtn.id = "fullscreenbtn";
 	fullscreenbtn.innerHTML = "Fullscreen";
 	document.body.appendChild(fullscreenbtn);
-	fullscreenbtn.addEventListener("onclick", fullscreen, false);
+	fullscreenbtn.getElementById.addEventListener("click", fullscreen, false);
 
 console.dir(fullscreenbtn);
 }
