@@ -99,8 +99,9 @@ function init() {
 	scene.add(models['sphere-001']);
 
 	//windowをクリック時にフルスクリーン
-//	window.addEventListener('click', fullscreen, false);
+	window.addEventListener('click', fullscreen, false);
 
+	//動画再生ボタン生成
 	setPlayButton();
 
 	window.addEventListener('click', playVideo, false);
@@ -173,7 +174,6 @@ function setStats(){
 function setPlayButton() {
 	playbtn = document.createElement("div");
 	playbtn.id = "playbtn";
-	playbtn.style.cssText = "width:80px;opacity:0.7;position:absolute;bottom:0;z-index:100;padding:10px;background-color:00ffff;font-size:14px;text-align:center;";
 	playbtn.innerHTML = "Play";
 	playbtn.addEventListener("click", playVideo(), false);
 	document.body.appendChild(playbtn);
