@@ -126,7 +126,6 @@ function fullscreen() {
 		renderer.domElement.webkitRequestFullscreen();
 	}
 
-console.log('fullscreen!');
 }
 
 function onWindowResize() {
@@ -142,8 +141,6 @@ function onWindowResize() {
 
 function playVideo(){
 	video.play();
-
-console.log('play!');
 }
 
 function animate() {
@@ -185,7 +182,6 @@ function setPlayButton() {
 	document.body.appendChild(playbtn);
 	playbtn.addEventListener("click", playVideo, false);
 
-console.dir(playbtn);
 }
 
 function setFullscreenButton() {
@@ -195,6 +191,4 @@ function setFullscreenButton() {
 	document.body.appendChild(fullscreenbtn);
 	fullscreenbtn.addEventListener("click", fullscreen, false);
 
-console.dir(fullscreenbtn);
-console.dir(fullscreenbtn.getElementById);
 }
