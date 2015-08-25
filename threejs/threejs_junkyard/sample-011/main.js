@@ -18,7 +18,7 @@ var models = {
  };
 var video;
 var texture;
-
+var playbtn;
 
 
 init();
@@ -39,28 +39,28 @@ function init() {
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
 
-	camera.position.set(300, 300, 300);
-	camera.lookAt({x:0,y:0,z:0});
+//	camera.position.set(300, 300, 300);
+//	camera.lookAt({x:0,y:0,z:0});
 
 	//デバイス
-//	controls = new THREE.DeviceOrientationControls(camera);
+	controls = new THREE.DeviceOrientationControls(camera);
 
 	//トラックボールオブジェクトの宣言
-	controls = new THREE.TrackballControls(camera);
+//	controls = new THREE.TrackballControls(camera);
 	//トラックボールの回転無効化と回転速度の設定
-	controls.noRotate = false;
-	controls.rotateSpeed = 4.0;
+//	controls.noRotate = false;
+//	controls.rotateSpeed = 4.0;
 	//トラックボールの拡大無効化と拡大速度の設定
-	controls.noZoom = false;
-	controls.zoomSpeed = 4.0;
+//	controls.noZoom = false;
+//	controls.zoomSpeed = 4.0;
 	//トラックボールのカメラ中心移動の無効化と中心速度の設定
-	controls.noPan = false;
-	controls.panSpeed = 1.0;
-	controls.target = new THREE.Vector3(0, 0, 0);
+//	controls.noPan = false;
+//	controls.panSpeed = 1.0;
+//	controls.target = new THREE.Vector3(0, 0, 0);
 	//トラックボールのスタティックムーブの有効化
-	controls.staticMoving = true;
+//	controls.staticMoving = true;
 	//トラックボールのダイナミックムーブ時の減衰定数
-	controls.dynamicDampingFactor = 0.3;
+//	controls.dynamicDampingFactor = 0.3;
 
 	scene = new THREE.Scene();
 
@@ -78,8 +78,8 @@ function init() {
 	scene.add(axis);
 
 	video = document.createElement('video');
-	video.width = 2048;
-	video.height = 1024;
+	video.width = 1280;
+	video.height = 720;
 	video.autoplay = true;
 	video.loop = true;
 	video.src = "../three.js_r71/textures/digbulid/digbulid.webm";
@@ -100,16 +100,14 @@ function init() {
 	//windowをクリック時にフルスクリーン
 //	window.addEventListener('click', fullscreen, false);
 
+	setPlayButton();
+
 	window.addEventListener('click', playVideo, false);
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
 
 	render();
-}
-
-function playVideo(){
-	video.play();
 }
 
 function fullscreen() {
@@ -133,6 +131,10 @@ function onWindowResize() {
 
 	render();
 
+}
+
+function playVideo(){
+	video.play();
 }
 
 function animate() {
@@ -165,4 +167,13 @@ function setStats(){
 	stats.domElement.style.top = '0px';
 	stats.domElement.style.zIndex = 100;
 	document.body.appendChild(stats.domElement);
+}
+
+function setPlayButton() {
+	playbtn = document.createElement("div");
+	playbtn.id = "playbtn";
+	playbtn.style.cssText = "width:80px;opacity:0.7;position:absolute;bottom:0;z-index:100;padding:10px;background-color:00ffff;font-size:14px;text-align:center;";
+	playbtn.innerHTML = "Play";
+	playbtn.addEventListener("click", playVideo(), false);
+	document.body.appendChild(playbtn.domElement);
 }
