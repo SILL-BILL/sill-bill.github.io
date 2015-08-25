@@ -176,5 +176,5 @@ function setPlayButton() {
 	playbtn.style.cssText = "width:80px;opacity:0.7;position:absolute;bottom:0;z-index:100;padding:10px;background-color:00ffff;font-size:14px;text-align:center;";
 	playbtn.innerHTML = "Play";
 	playbtn.addEventListener("click", playVideo(), false);
-	document.body.appendChild(playbtn.domElement);
+	document.body.appendChild(playbtn);
 }
