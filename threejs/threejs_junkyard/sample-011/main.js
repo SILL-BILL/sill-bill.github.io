@@ -107,7 +107,7 @@ function init() {
 	//動画再生ボタン生成(DOM)
 	setPlayButton();
 
-	window.addEventListener('click', playVideo, false);
+//	window.addEventListener('click', playVideo, false);
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
