@@ -88,7 +88,8 @@ function init() {
 	texture.minFilter = THREE.LinearFilter;
 
 	models['sphere-001'] = new THREE.Mesh(
-		new THREE.SphereGeometry(500, 16, 8),
+//		new THREE.SphereGeometry(500, 16, 8),
+		new THREE.SphereGeometry(500, 30, 30),
 		new THREE.MeshBasicMaterial({
 			map: texture,
 			side: THREE.DoubleSide
