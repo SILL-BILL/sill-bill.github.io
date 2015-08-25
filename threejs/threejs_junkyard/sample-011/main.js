@@ -82,7 +82,7 @@ function init() {
 	video.height = 1024;
 	video.autoplay = true;
 	video.loop = true;
-	video.src = "../three.js_r71/textures/spacepano/spacepano.webm";
+	video.src = "../three.js_r71/textures/digbulid/digbulid.webm";
 
 	texture = new THREE.VideoTexture(video);
 	texture.minFilter = THREE.LinearFilter;
@@ -100,10 +100,16 @@ function init() {
 	//windowをクリック時にフルスクリーン
 //	window.addEventListener('click', fullscreen, false);
 
+	window.addEventListener('click', playVideo, false);
+
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
 
 	render();
+}
+
+function playVideo(){
+	video.play();
 }
 
 function fullscreen() {
