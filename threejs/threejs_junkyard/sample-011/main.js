@@ -125,6 +125,8 @@ function fullscreen() {
 	} else if (renderer.domElement.webkitRequestFullscreen) {
 		renderer.domElement.webkitRequestFullscreen();
 	}
+
+console.log('fullscreen!');
 }
 
 function onWindowResize() {
@@ -140,6 +142,8 @@ function onWindowResize() {
 
 function playVideo(){
 	video.play();
+
+console.log('play!');
 }
 
 function animate() {
@@ -180,6 +184,8 @@ function setPlayButton() {
 	playbtn.innerHTML = "Play";
 	playbtn.addEventListener("click", playVideo(), false);
 	document.body.appendChild(playbtn);
+
+console.dir(playbtn);
 }
 
 function setFullscreenButton() {
@@ -188,4 +194,6 @@ function setFullscreenButton() {
 	fullscreenbtn.innerHTML = "Fullscreen";
 	fullscreenbtn.addEventListener("click", fullscreen(), false);
 	document.body.appendChild(fullscreenbtn);
+
+console.dir(fullscreenbtn);
 }
