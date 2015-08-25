@@ -18,7 +18,7 @@ var models = {
  };
 var video;
 var texture;
-var playbtn;
+var playbtn, fullscreenbtn;
 
 
 init();
@@ -99,9 +99,12 @@ function init() {
 	scene.add(models['sphere-001']);
 
 	//windowをクリック時にフルスクリーン
-	window.addEventListener('click', fullscreen, false);
+//	window.addEventListener('click', fullscreen, false);
 
-	//動画再生ボタン生成
+	//フルスクリーンボタン生成(DOM)
+	setFullscreenButton();
+
+	//動画再生ボタン生成(DOM)
 	setPlayButton();
 
 	window.addEventListener('click', playVideo, false);
@@ -172,9 +175,17 @@ function setStats(){
 }
 
 function setPlayButton() {
-	playbtn = document.createElement("div");
+	playbtn = document.createElement("a");
 	playbtn.id = "playbtn";
 	playbtn.innerHTML = "Play";
 	playbtn.addEventListener("click", playVideo(), false);
 	document.body.appendChild(playbtn);
+}
+
+function setFullscreenButton() {
+	fullscreenbtn = document.createElement("a");
+	fullscreenbtn.id = "fullscreenbtn";
+	fullscreenbtn.innerHTML = "Fullscreen";
+	fullscreenbtn.addEventListener("click", fullscreen(), false);
+	document.body.appendChild(fullscreenbtn);
 }
