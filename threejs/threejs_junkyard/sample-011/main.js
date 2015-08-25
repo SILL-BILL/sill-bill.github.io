@@ -95,10 +95,10 @@ function init() {
 		})
 	);
 
-	scen.add(models['sphere-001']);
+	scene.add(models['sphere-001']);
 
 	//windowをクリック時にフルスクリーン
-	window.addEventListener('click', fullscreen, false);
+//	window.addEventListener('click', fullscreen, false);
 
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
