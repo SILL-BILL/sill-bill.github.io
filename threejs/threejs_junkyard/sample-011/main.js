@@ -183,7 +183,7 @@ function setPlayButton() {
 	playbtn.id = "playbtn";
 	playbtn.innerHTML = "Play";
 	document.body.appendChild(playbtn);
-	playbtn.getElementById.addEventListener("click", playVideo, false);
+	playbtn.addEventListener("click", playVideo, false);
 
 console.dir(playbtn);
 }
