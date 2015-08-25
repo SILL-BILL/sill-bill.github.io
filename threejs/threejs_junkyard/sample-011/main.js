@@ -179,7 +179,7 @@ function setStats(){
 }
 
 function setPlayButton() {
-	playbtn = document.createElement("a");
+	playbtn = document.createElement("div");
 	playbtn.id = "playbtn";
 	playbtn.innerHTML = "Play";
 	document.body.appendChild(playbtn);
@@ -189,11 +189,11 @@ console.dir(playbtn);
 }
 
 function setFullscreenButton() {
-	fullscreenbtn = document.createElement("a");
+	fullscreenbtn = document.createElement("div");
 	fullscreenbtn.id = "fullscreenbtn";
 	fullscreenbtn.innerHTML = "Fullscreen";
 	document.body.appendChild(fullscreenbtn);
-	fullscreenbtn.getElementById.addEventListener("click", fullscreen, false);
+	fullscreenbtn.addEventListener("click", fullscreen, false);
 
 console.dir(fullscreenbtn);
 }

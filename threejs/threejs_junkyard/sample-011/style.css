@@ -20,6 +20,7 @@ body {
 	font-weight: bold;
 	box-sizing: border-box;
 	border: #ededed solid 3px;
+	cursor: pointer
 }
 
 #fullscreenbtn {
@@ -38,4 +39,5 @@ body {
 	font-weight: bold;
 	box-sizing: border-box;
 	border: #ededed solid 3px;
+	cursor: pointer
 }
