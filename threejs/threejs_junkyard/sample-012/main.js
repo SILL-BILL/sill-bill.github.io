@@ -14,7 +14,7 @@ var models = {
 	'icosahedron-001':'',
 	'icosahedron-002':'',
 	'icosahedron-003':'',
-	'icosahedron-003':''
+	'icosahedron-004':''
  };
 var fullscreenbtn;
 
