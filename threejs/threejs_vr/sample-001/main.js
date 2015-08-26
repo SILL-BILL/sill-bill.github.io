@@ -16,6 +16,7 @@ var models = {
 	'icosahedron-003':'',
 	'icosahedron-004':''
  };
+var effect;
 var fullscreenbtn;
 
 
@@ -36,22 +37,10 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
-
-//	camera.position.set(300, 300, 300);
-//	camera.lookAt({x:0,y:0,z:0});
-
 	//デバイス
 	controls = new THREE.DeviceOrientationControls(camera);
 
 	scene = new THREE.Scene();
-
-	// lights
-/*
-	var light = new THREE.PointLight(0xffffff, 1, 500);
-	light.position.set(0, 10, 0);
-	scene.add( light );
-*/
-
 
 	//軸オブジェクトの生成
 	axis = new THREE.AxisHelper(300);
@@ -119,6 +108,11 @@ function init() {
 	//windowResize時にメソッドが走るようにイベントをセット
 	window.addEventListener('resize', onWindowResize, false);
 
+	//effects(ステレオ立体視)
+	effect = new THREE.StereoEffect(renderer);
+	effect.eyeSeparation = 10;
+	effect.setSize(window.innerWidth, window.innerHeight);
+
 	render();
 }
 
@@ -140,7 +134,7 @@ function onWindowResize() {
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	effect.setSize(window.innerWidth, window.innerHeight);
 
 	render();
 
@@ -170,7 +164,7 @@ function animate() {
 
 function render(){
 
-	renderer.render(scene, camera);
+	effect.render(scene, camera);
 
 }
 
