@@ -43,9 +43,9 @@ function init() {
 	scene = new THREE.Scene();
 
 	//軸オブジェクトの生成
-	axis = new THREE.AxisHelper(300);
+//	axis = new THREE.AxisHelper(300);
 	//軸オブジェクトのシーンへの追加
-	scene.add(axis);
+//	scene.add(axis);
 
 	//球体オブジェクトの生成
 	models['sphere-001'] = new THREE.Mesh(
