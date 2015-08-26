@@ -150,7 +150,7 @@ function animate() {
 
 	requestAnimationFrame(animate);
 
-	models['sphere-001'].rotation.x += 0.005;
+	models['sphere-001'].rotation.y += 0.001;
 	models['icosahedron-001'].rotation.x += 0.005;
 	models['icosahedron-001'].rotation.y += 0.01;
 	models['icosahedron-002'].rotation.x += 0.005;
