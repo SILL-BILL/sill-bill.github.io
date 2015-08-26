@@ -58,9 +58,7 @@ function init() {
 	//軸オブジェクトのシーンへの追加
 	scene.add(axis);
 
-	texture = new THREE.VideoTexture(video);
-	texture.minFilter = THREE.LinearFilter;
-
+	//球体オブジェクトの生成
 	models['sphere-001'] = new THREE.Mesh(
 		new THREE.SphereGeometry(500, 30, 30),
 		new THREE.MeshBasicMaterial({
