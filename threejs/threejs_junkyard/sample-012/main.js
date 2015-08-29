@@ -9,15 +9,8 @@ var camera, scene, renderer;
 var stats;
 var axis;
 var controls;
-var models = { 
-	'sphere-001':'',
-	'icosahedron-001':'',
-	'icosahedron-002':'',
-	'icosahedron-003':'',
-	'icosahedron-004':''
-};
 var fullscreenbtn;
-
+var particles;
 
 init();
 animate();
@@ -61,60 +54,18 @@ function init() {
 	//軸オブジェクトのシーンへの追加
 	scene.add(axis);
 
-	//球体オブジェクトの生成
-	models['sphere-001'] = new THREE.Mesh(
-		new THREE.SphereGeometry(500, 30, 30),
-		new THREE.MeshBasicMaterial({
-			color: 0x00ffff,
-			wireframe: true,
-			wireframeLinewidth: 3
-		})
-	);
-	scene.add(models['sphere-001']);
-
-	models['icosahedron-001'] = new THREE.Mesh(
-		new THREE.IcosahedronGeometry(100),
-		new THREE.MeshBasicMaterial({
-			color: 0x00ffff,
-			wireframe: true,
-			wireframeLinewidth: 3
-		})
-	);
-	models['icosahedron-001'].position.z = -280;
-	scene.add(models['icosahedron-001']);
-
-	models['icosahedron-002'] = new THREE.Mesh(
-		new THREE.IcosahedronGeometry(100),
-		new THREE.MeshBasicMaterial({
-			color: 0x00ff00,
-			wireframe: true,
-			wireframeLinewidth: 3
-		})
-	);
-	models['icosahedron-002'].position.x = 280;
-	scene.add(models['icosahedron-002']);
-
-	models['icosahedron-003'] = new THREE.Mesh(
-		new THREE.IcosahedronGeometry(100),
-		new THREE.MeshBasicMaterial({
-			color: 0xff00ff,
-			wireframe: true,
-			wireframeLinewidth: 3
-		})
-	);
-	models['icosahedron-003'].position.z = 280;
-	scene.add(models['icosahedron-003']);
-
-	models['icosahedron-004'] = new THREE.Mesh(
-		new THREE.IcosahedronGeometry(100),
-		new THREE.MeshBasicMaterial({
-			color: 0xffff00,
-			wireframe: true,
-			wireframeLinewidth: 3
-		})
-	);
-	models['icosahedron-004'].position.x = -280;
-	scene.add(models['icosahedron-004']);
+	//パーティクル生成
+	var geometry = new THREE.Geometry();
+	for (var n = 0; n < 20000; n++) {
+		var vertex = new THREE.Vector3();
+		vertex.x = (Math.random() - 0.5)*1600;
+		vertex.y = (Math.random() - 0.5)*1600;
+		vertex.z = (Math.random() - 0.5)*1600;
+		geometry.vertices.push(vertex);
+	}
+	var material = new THREE.PointCloudMaterial({size: 2});
+	particles = new THREE.PointCloud(geometry, material);
+	scene.add(particles);
 
 	//フルスクリーンボタン生成(DOM)
 	setFullscreenButton();
@@ -152,16 +103,6 @@ function onWindowResize() {
 function animate() {
 
 	requestAnimationFrame(animate);
-
-	models['sphere-001'].rotation.y += 0.001;
-	models['icosahedron-001'].rotation.x += 0.005;
-	models['icosahedron-001'].rotation.y += 0.01;
-	models['icosahedron-002'].rotation.x += 0.005;
-	models['icosahedron-002'].rotation.y += 0.01;
-	models['icosahedron-003'].rotation.x += 0.005;
-	models['icosahedron-003'].rotation.y += 0.01;
-	models['icosahedron-004'].rotation.x += 0.005;
-	models['icosahedron-004'].rotation.y += 0.01;
 
 	controls.update();
 
