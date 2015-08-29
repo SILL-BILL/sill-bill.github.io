@@ -15,7 +15,7 @@ var models = {
 	'icosahedron-002':'',
 	'icosahedron-003':'',
 	'icosahedron-004':''
- };
+};
 var fullscreenbtn;
 
 
@@ -41,6 +41,7 @@ function init() {
 
 	//オービット
 	controls = new THREE.OrbitControls(camera);
+	controls.autoRotate();
 
 	//デバイス
 //	controls = new THREE.DeviceOrientationControls(camera);
