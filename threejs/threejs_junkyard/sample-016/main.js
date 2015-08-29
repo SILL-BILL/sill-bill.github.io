@@ -56,7 +56,7 @@ function init() {
 
 	//パーティクル生成
 	var geometry = new THREE.Geometry();
-	for (var n = 0; n < 20000; n++) {
+	for (var n = 0; n < 2000; n++) {
 		var vertex = new THREE.Vector3();
 		vertex.x = (Math.random() - 0.5)*2000;
 		vertex.y = (Math.random() - 0.5)*2000;
