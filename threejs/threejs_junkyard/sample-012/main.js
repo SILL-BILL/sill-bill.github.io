@@ -56,8 +56,8 @@ function init() {
 
 	//パーティクル生成
 	var geometry = new THREE.Geometry();
-//	var vertex = new THREE.Vector3(0,0,0);
-//	geometry.vertices.push(vertex);
+	var vertex = new THREE.Vector3(0,0,0);
+	geometry.vertices.push(vertex);
 	var material = new THREE.PointCloudMaterial({size: 100, color: 0x00ffff});
 	particles = new THREE.PointCloud(geometry,material);
 	scene.add(particles);
