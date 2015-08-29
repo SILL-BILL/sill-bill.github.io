@@ -56,10 +56,15 @@ function init() {
 
 	//パーティクル生成
 	var geometry = new THREE.Geometry();
-	particles = new THREE.PointCloud(
-		new THREE.Geometry().vertices.push(new THREE.Vector3(0,0,0)),
-		new THREE.PointCloudMaterial({size: 100})
-	);
+	for (var n = 0; n < 20000; n++) {
+		var vertex = new THREE.Vector3();
+		vertex.x = (Math.random() - 0.5)*500;
+		vertex.y = (Math.random() - 0.5)*500;
+		vertex.z = (Math.random() - 0.5)*500;
+		geometry.vertices.push(vertex);
+	}
+	var material = new THREE.PointCloudMaterial({size: 2});
+	particles = new THREE.PointCloud(geometry, material);
 	scene.add(particles);
 
 	//フルスクリーンボタン生成(DOM)
