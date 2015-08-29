@@ -58,9 +58,9 @@ function init() {
 	var geometry = new THREE.Geometry();
 	for (var n = 0; n < 20000; n++) {
 		var vertex = new THREE.Vector3();
-		vertex.x = (Math.random() - 0.5)*1600;
-		vertex.y = (Math.random() - 0.5)*1600;
-		vertex.z = (Math.random() - 0.5)*1600;
+		vertex.x = (Math.random() - 0.5)*500;
+		vertex.y = (Math.random() - 0.5)*500;
+		vertex.z = (Math.random() - 0.5)*500;
 		geometry.vertices.push(vertex);
 	}
 	var material = new THREE.PointCloudMaterial({size: 2});
