@@ -1,0 +1,26 @@
+body {
+	font-family: Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	margin: 0px;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+#fullscreenbtn {
+	display: block;
+	position: absolute;
+	width: 120px;
+	opacity: 0.8;
+	bottom: 0;
+	right: 0;
+	z-index: 100;
+	padding: 10px;
+	background-color: #333;
+	font-size: 14px;
+	text-align: center;
+	color: #ededed;
+	font-weight: bold;
+	box-sizing: border-box;
+	border: #ededed solid 3px;
+	cursor: pointer
+}
+
