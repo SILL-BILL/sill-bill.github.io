@@ -36,12 +36,12 @@ function init() {
 	// camera
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 
-//	camera.position.set(300, 300, 300);
-//	camera.lookAt({x:0,y:0,z:0});
+	camera.position.set(300, 300, 300);
+	camera.lookAt({x:0,y:0,z:0});
 
 	//オービット
 	controls = new THREE.OrbitControls(camera);
-	controls.autoRotate();
+	controls.autoRotate = true;
 
 	//デバイス
 //	controls = new THREE.DeviceOrientationControls(camera);
