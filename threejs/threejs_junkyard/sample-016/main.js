@@ -64,9 +64,9 @@ function init() {
 		geometry.vertices.push(vertex);
 	}
 	var material = new THREE.PointCloudMaterial({
-		size: 50,
+		size: 30,
 		sizeAttenuation: false,
-		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/new_pokemon_img0004.png'),
+		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/sprite.png'),
 		alphaTest: 0.5,
 		transparent: true
 	});
