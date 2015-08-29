@@ -56,7 +56,7 @@ function init() {
 
 	//パーティクル生成
 	var geometry = new THREE.Geometry();
-	for (var n = 0; n < 2000; n++) {
+	for (var n = 0; n < 20000; n++) {
 		var vertex = new THREE.Vector3();
 		vertex.x = (Math.random() - 0.5)*2000;
 		vertex.y = (Math.random() - 0.5)*2000;
@@ -66,7 +66,7 @@ function init() {
 	var material = new THREE.PointCloudMaterial({
 		size: 30,
 		sizeAttenuation: false,
-		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/sprite.png'),
+		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/sprite1.png'),
 		alphaTest: 0.5,
 		transparent: true
 	});
