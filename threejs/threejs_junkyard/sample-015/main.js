@@ -58,7 +58,10 @@ function init() {
 	var geometry = new THREE.Geometry();
 	var vertex = new THREE.Vector3(0,0,0);
 	geometry.vertices.push(vertex);
-	var material = new THREE.PointCloudMaterial({size: 100, color: 0x00ffff, map:createCircleTexture()});
+	var material = new THREE.PointCloudMaterial({
+		size: 100,
+		map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/new_pokemon_img0004.png')
+	});
 	particles = new THREE.PointCloud(geometry,material);
 	scene.add(particles);
 
