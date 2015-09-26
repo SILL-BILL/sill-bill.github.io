@@ -103,9 +103,7 @@ function animate() {
 
 	requestAnimationFrame(animate);
 
-
-	card.rotation.x += 0.05;
-	card.rotation.z += 0.03;
+	card.rotation.y += 0.01;
 
 	controls.update();
 
