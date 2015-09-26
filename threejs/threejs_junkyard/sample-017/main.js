@@ -43,11 +43,11 @@ function init() {
 	scene = new THREE.Scene();
 
 	// lights
-/*
+
 	var light = new THREE.PointLight(0xffffff, 1, 500);
 	light.position.set(0, 10, 0);
 	scene.add( light );
-*/
+
 
 
 	//軸オブジェクトの生成
@@ -57,7 +57,7 @@ function init() {
 
 	//プレーンオブジェクト生成
 	card = new THREE.Mesh(
-		new THREE.PlaneGeometry(50),
+		new THREE.PlaneGeometry(50,50),
 		new THREE.MeshBasicMaterial({
 			map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/ffxiv/ffxiv_ava-001.png')
 		})
