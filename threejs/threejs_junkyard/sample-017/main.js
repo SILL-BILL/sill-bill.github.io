@@ -60,7 +60,8 @@ function init() {
 		new THREE.PlaneGeometry(50,50),
 		new THREE.MeshBasicMaterial({
 			map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/ffxiv/ffxiv_ava-001.png'),
-			side: THREE.DoubleSide
+			side: THREE.DoubleSide,
+			overdraw: true	//ポリゴンの境界線を消す
 		})
 	);
 	scene.add(card);
@@ -103,8 +104,8 @@ function animate() {
 	requestAnimationFrame(animate);
 
 
-	card.rotation.x += 0.005;
-	card.rotation.z += 0.01;
+	card.rotation.x += 0.05;
+	card.rotation.z += 0.03;
 
 	controls.update();
 
