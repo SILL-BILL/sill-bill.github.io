@@ -56,7 +56,7 @@ function init() {
 	scene.add(axis);
 
 	//プレーンオブジェクト生成
-	card = new THREE.mesh(
+	card = new THREE.Mesh(
 		new THREE.PlaneGeometry(50),
 		new THREE.MeshBasicMaterial({
 			map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/ffxiv/ffxiv_ava-001.png')
