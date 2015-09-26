@@ -18,7 +18,7 @@ animate();
 function init() {
 
 //	renderer = new THREE.WebGLRenderer();
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.CanvasRenderer();
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
@@ -59,7 +59,8 @@ function init() {
 	card = new THREE.Mesh(
 		new THREE.PlaneGeometry(50,50),
 		new THREE.MeshBasicMaterial({
-			map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/ffxiv/ffxiv_ava-001.png')
+			map: THREE.ImageUtils.loadTexture('../three.js_r71/textures/ffxiv/ffxiv_ava-001.png'),
+			side: THREE.DoubleSide
 		})
 	);
 	scene.add(card);
@@ -100,6 +101,10 @@ function onWindowResize() {
 function animate() {
 
 	requestAnimationFrame(animate);
+
+
+	card.rotation.x += 0.005;
+	card.rotation.z += 0.01;
 
 	controls.update();
 
