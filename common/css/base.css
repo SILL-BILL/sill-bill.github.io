@@ -258,7 +258,7 @@ module
 }
 
 .header .navbar {
-	height: 80px;
+	height: 56px;
 	position: relative;
 	width: 1024px;
 	margin: 0 auto;
@@ -270,8 +270,8 @@ module
 	bottom: 0;
 	left: 0;
 	margin: auto 0;
-	height: 35px;
-	width: 260px;
+	height: 20px;
+	width: 127px;
 }
 .header .navbar .logo > a {
 	background: transparent url('../img/logo-wh.png') no-repeat center center;
@@ -279,7 +279,7 @@ module
 	display: block;
 	text-decoration: none;
 	outline: none;
-	height: 35px;
+	height: 20px;
 
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -302,8 +302,8 @@ module
 	bottom: 0;
 	right: 0;
 	margin: auto 0;
-	width: 35px;
-	height: 35px;
+	width: 28px;
+	height: 28px;
 }
 .header .navbar .btn-menu > a {
 	background: transparent url('../img/btn-menu-wh.png') no-repeat center center;
@@ -311,7 +311,7 @@ module
 	display: block;
 	text-decoration: none;
 	outline: none;
-	height: 35px;
+	height: 28px;
 
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
