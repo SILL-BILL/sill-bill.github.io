@@ -205,8 +205,5 @@
 	.item-list > li:last-child {
 		margin-bottom: 0; 
 	}
-	.item-list > li .thum {
-		height: 280px;
-	}
 
 }
