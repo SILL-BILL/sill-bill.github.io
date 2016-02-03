@@ -67,7 +67,9 @@
 	padding: 25px 0;
 }
 .container .main .kv-mini .ttl {
+	color: #fff;
 	font-size: 24px;
+	font-weight: bold;
 }
 @media (max-width: 640px) {
 	.container .main .kv-mini .inner {
