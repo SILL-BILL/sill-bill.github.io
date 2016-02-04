@@ -63,9 +63,14 @@
 	color: #a7a7a7;
 }
 
+@media (max-width: 768px) {
+	.container .main .kv {
+		height: 238px;
+	}
+}
 @media (max-width: 640px) {
 	.container .main .kv {
-
+		height: 180px
 	}
 }
 
