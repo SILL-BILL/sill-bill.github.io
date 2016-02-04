@@ -4,7 +4,7 @@
 .container .main .kv {
 	background-color: #616161;
 	background-image: url('../img/kv.jpg');
-	background-repeat: none;
+	background-repeat: no-repeat;
 	background-position: top center;
 	background-attachment: fixed;
 	background-size: cover;
