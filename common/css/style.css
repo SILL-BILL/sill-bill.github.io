@@ -208,6 +208,10 @@
 	margin-bottom: 10px;
 	padding-left: 8px;
 }
+.item-list > li .foot {
+	
+}
+
 @media (max-width: 768px) {
 	.item-list > li {
 		width: 315px;
