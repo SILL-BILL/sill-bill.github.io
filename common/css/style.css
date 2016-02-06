@@ -159,28 +159,6 @@
 .item-list > li .caption {
 	padding: 10px;
 }
-.item-list > li .caption a {
-	color: #2979ff;
-	text-decoration: none;
-	outline: none;
-
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	-ms-transition: all .5s ease;
-	transition: all .5s ease;
-}
-.item-list > li .caption a:hover,
-.item-list > li .caption a:focus {
-	color: #94BCFF;
-	text-decoration: none;
-
-	-webkit-transition: all .5s ease;
-	-moz-transition: all .5s ease;
-	-o-transition: all .5s ease;
-	-ms-transition: all .5s ease;
-	transition: all .5s ease;
-}
 .item-list > li .caption .ttl {
 	font-size: 16px;
 	font-weight: bold;
@@ -209,9 +187,34 @@
 	padding-left: 8px;
 }
 .item-list > li .foot {
-	
+	border-top: 1px solid #ededed;
+	padding: 10px;
 }
+.item-list > li .caption a,
+.item-list > li .foot a {
+	color: #2979ff;
+	text-decoration: none;
+	outline: none;
 
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.item-list > li .caption a:hover,
+.item-list > li .caption a:focus,
+.item-list > li .foot a:hover,
+.item-list > li .foot a:focus {
+	color: #94BCFF;
+	text-decoration: none;
+
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
 @media (max-width: 768px) {
 	.item-list > li {
 		width: 315px;
