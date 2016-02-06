@@ -215,10 +215,70 @@
 	-ms-transition: all .5s ease;
 	transition: all .5s ease;
 }
+.item-list > li .btn-list {
+	overflow: hidden;
+}
+.item-list > li .btn-list > li {
+	float: left;
+	display: inline-block;
+	margin-right: 10px;
+}
+.item-list > li .btn-list > li > a {
+	background-color: #333;
+	color: #fff;
+	display: block;
+	font-weight: bold;
+	padding: 10px 15px;
+
+	-webkit-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+}
+.item-list > li .btn-list > li > a:hover,
+.item-list > li .btn-list > li > a:active {
+	background: #333;
+	text-decoration: none;
+
+	-webkit-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+}
+.item-list > li .btn-list > li > a.blue {
+	background-color: #2979FF;
+}
+.item-list > li .btn-list > li > a.blue:hover,
+.item-list > li .btn-list > li > a.blue:active {
+	background: #0288D1;
+}
+.item-list > li .btn-list > li > a.green {
+	background-color: #4CAF50;
+}
+.item-list > li .btn-list > li > a.green:hover,
+.item-list > li .btn-list > li > a.green:active {
+	background: #388E3C;
+}
+
 @media (max-width: 768px) {
 	.item-list > li {
 		width: 315px;
 	}
+
+	.item-list > li .btn-list {
+		overflow: hidden;
+	}
+	.item-list > li .btn-list > li {
+		float: none;
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.item-list > li .btn-list > li:last-child {
+		margin-bottom: 0;
+	}
+
 }
 @media (max-width: 640px) {
 
