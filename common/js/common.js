@@ -21,10 +21,10 @@ $(function(){
 $(window).on('load', function(){
 
 	//ローディングカバー
-	$('.loading-cover').velocity({opacity:0},{delay:500*2,duration:500*2,easing:'ease-out',display:'none',complete:function(){ $('.loading-cover').addClass('off'); } });
+	$('.loading-cover').velocity({opacity:0},{delay:500*2,duration:500*1,easing:'ease-out',display:'none',complete:function(){ $('.loading-cover').addClass('off'); } });
 
 	//ヘッダーロゴアニム
-	$('.header .navbar .logo').velocity({opacity:0, rotateX:'-90deg'},{duration:1}).velocity({opacity:1,rotateX:'0'},{delay:500*2, duration:500*3,easing:'ease-out'}).attr('style','');
+	$('.header .navbar .logo').velocity({opacity:0, rotateX:'-90deg'},{duration:1}).velocity({opacity:1,rotateX:'0'},{delay:500*2, duration:500*2,easing:'ease-out'}).attr('style','');
 
 	/*------------------
 	 heightline item-list
