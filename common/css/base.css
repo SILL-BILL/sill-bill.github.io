@@ -587,8 +587,8 @@ module
 
 .breadcrumb-list > li.home,
 .breadcrumb-list-wh > li.home {
-	background: transparent url('../img/bread-home.png') no-repeat left center;
-	background-size: 16px;
+	background: transparent url('../img/bread-home.png') no-repeat 0 2px;
+	background-size: 14px;
 	padding-left: 20px;
 }
 .breadcrumb-list-wh > li.home {
