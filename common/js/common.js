@@ -42,6 +42,7 @@ $(window).on('load', function(){
 		else {
 			$(this).velocity({ opacity:0 },{ duration:300 });
 		}
+console.dir('isInView : '+isInView);
 	});
 
 });
