@@ -21,7 +21,7 @@ $(function(){
 $(window).on('load', function(){
 
 	//ローディングカバー
-	$('.loading-cover').velocity({opacity:0},{delay:500*1,duration:500,easing:'ease-out',display:'none'}).addClass('off');
+	$('.loading-cover').velocity({opacity:0},{delay:500*1,duration:500*2,easing:'ease-out',display:'none'}).addClass('off');
 
 	//ヘッダーロゴアニム
 	$('.header .navbar .logo').velocity({opacity:0, rotateX:'-90deg'},{duration:1}).velocity({opacity:1,rotateX:'0'},{delay:500*2, duration:500*2,easing:'ease-out'}).attr('style','');
