@@ -403,21 +403,14 @@ module
 	box-sizing: border-box;
 	border-bottom: 1px solid #5fa1c3;
 	padding-bottom: 5px;
-	margin-bottom: 20px;
 	font-size: 18px;
 	font-weight: bold;
+	margin: 20px auto;
 }
-
-
-/*-----------------
- mod-ttl02
------------------*/
-.mod-ttl02 {
-	box-sizing: border-box;
-	padding-bottom: 5px;
-	border-bottom: 1px solid #cacaca;
-	margin-bottom: 15px;
-	overflow: hidden;
+@media (max-width: 640px) {
+	.mod-ttl01 {
+		margin:20px 10px;
+	}
 }
 
 
