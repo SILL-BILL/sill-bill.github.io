@@ -415,6 +415,23 @@ module
 
 
 /*-----------------
+ mod-ttl02
+-----------------*/
+.mod-ttl02 {
+	box-sizing: border-box;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #cacaca;
+	margin-bottom: 15px;
+	overflow: hidden;
+	margin: 10px auto;
+}
+@media (max-width: 640px) {
+	.mod-ttl02 {
+		margin:10px 10px;
+	}
+}
+
+/*-----------------
  loading-cover
 ------------------*/
 .loading-cover {
