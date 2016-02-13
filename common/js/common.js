@@ -29,6 +29,8 @@ $(window).on('load', function(){
 	/*------------------
 	 heightline item-list
 	-------------------*/
+	$(".item-list > li > .caption").heightLine("resize");
+	$(".item-list > li > .foot").heightLine("resize");
 	$(".item-list > li").heightLine("resize");
 
 	/*-----------------
