@@ -1,6 +1,6 @@
 var cv_wrap = document.getElementById("cv_wrap");
 
-var renderer = PIXI.autoDetectRenderer(cv_wrap.innerWidth, cv_wrap.innerHeight);
+var renderer = PIXI.autoDetectRenderer(cv_wrap.innerWidth, cv_wrap.innerHeight, { transparent: true });
 
 cv_wrap.appendChild(renderer.view);
 
