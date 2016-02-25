@@ -184,13 +184,19 @@
 	width: 334px;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 .item-list > li .thum {
 	background: #333 url('../img/thum-640x300.jpg') no-repeat center top;
-	background-size: cover;
-	height: 150px;
+	background-size: contain;
+	padding-top: 44.91017964%;
 	width: 100%;
 	position: relative;
+}
+.item-list > li .thum.fixed-height {
+	background-size: cover;
+	padding-top: 0;
+	height: 150px;
 }
 .item-list > li .thum .ttl {
 	background: transparent -webkit-linear-gradient(to top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0) 100%);
