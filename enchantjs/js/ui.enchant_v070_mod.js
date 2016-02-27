@@ -51,12 +51,12 @@
 //画像のURLを指定すること
 enchant.ui = { 
 	assets: {
-		'pad.png' : '//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/pad.png', 
-		'apad.png' : '//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/apad.png', 
-		'icon0.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/icon0.png', 
-		'font0.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/font0.png',
-		'font1.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/font1.png',
-		'font2.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/ui_enchant/font2.png'
+		'pad.png' : '/enchantjs/img/ui_enchant/pad.png', 
+		'apad.png' : '/enchantjs/img/ui_enchant/apad.png', 
+		'icon0.png':'/enchantjs/img/ui_enchant/icon0.png', 
+		'font0.png':'/enchantjs/img/ui_enchant/font0.png',
+		'font1.png':'/enchantjs/img/ui_enchant/font1.png',
+		'font2.png':'/enchantjs/img/ui_enchant/font2.png'
 	}
  };
 
