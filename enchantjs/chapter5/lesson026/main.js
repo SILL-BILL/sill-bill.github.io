@@ -45,10 +45,10 @@ var ASSETS = [
 	PLAYER_IMAGE,
 	ENEMY_IMAGE,
 	ICON_IMAGE,
-	BACKGROUND_IMAGE,
-	MAIN_BGM,
-	JUMP_SE,
-	ITEM_GET_SE
+	BACKGROUND_IMAGE
+//	MAIN_BGM,
+//	JUMP_SE,
+//	ITEM_GET_SE
 ];
 
 /*
@@ -108,8 +108,8 @@ window.onload = function(){
 			game.frame = 0;
 			
 			//BGM再生
-			game.assets[MAIN_BGM].play();
-			game.assets[MAIN_BGM].src.loop = true;
+//			game.assets[MAIN_BGM].play();
+//			game.assets[MAIN_BGM].src.loop = true;
 			
 			//プレイヤーを生成、表示
 			player = new Player();
@@ -193,7 +193,7 @@ var Player = Class.create(Sprite, {
 		//移動値を設定
 		this.vy = PLAYER_JUMP;
 		//SE再生
-		game.assets[JUMP_SE].clone().play();
+//		game.assets[JUMP_SE].clone().play();
 	}
 });
 
@@ -288,7 +288,7 @@ var Coin = Class.create(Item, {
 		//スコア加算
 		scoreLabel.score += COIN_POINT;
 		//SE再生
-		game.assets[ITEM_GET_SE].clone().play();
+//		game.assets[ITEM_GET_SE].clone().play();
 	}
 });
 
@@ -313,7 +313,7 @@ var Diamond = Class.create(Item, {
 		//スコア加算
 		scoreLabel.score += DIAMOND_POINT;
 		//SE再生
-		game.assets[ITEM_GET_SE].clone().play();
+//		game.assets[ITEM_GET_SE].clone().play();
 	}
 });
 
