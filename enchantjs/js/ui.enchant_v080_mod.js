@@ -44,6 +44,7 @@
  *      core.rootScene.addEventListener(button);
  */
 
+
 /**
  * @type {Object}
  */
