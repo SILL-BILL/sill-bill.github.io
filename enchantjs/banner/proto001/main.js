@@ -18,7 +18,7 @@ var LOGO_WIDTH  = 42;
 var LOGO_HEIGHT = 42;
 //画像
 var BACKGROUND_IMAGE = "../../img/banner/bg_001.png";
-var LOGO_IMAGE = "../../img/banner/logo_rakuken_001.png";
+var LOGO_IMAGE = "../../img/banner/logo_001.png";
 //アセット
 var ASSETS = [
 	BACKGROUND_IMAGE,
