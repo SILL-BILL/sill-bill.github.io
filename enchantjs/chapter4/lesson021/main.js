@@ -53,8 +53,8 @@ var ASSETS = [
 	ENEMY_BLUE_IMAGE,
 	BACKGROUND_IMAGE,
 	CRASH_IMAGE,
-	MAIN_BGM,
-	CRASH_SE
+//	MAIN_BGM,
+//	CRASH_SE
 ];
 
 
@@ -116,8 +116,8 @@ window.onload = function(){
 			game.frame = 0;
 			
 			//BGM再生
-			game.assets[MAIN_BGM].play();
-			game.assets[MAIN_BGM].src.loop = true;
+//			game.assets[MAIN_BGM].play();
+//			game.assets[MAIN_BGM].src.loop = true;
 			
 			//アナログパッドを生成、表示
 			var pad = new Pad();
@@ -211,7 +211,7 @@ window.onload = function(){
 						scene.insertBefore(crash, scoreLabel);
 						
 						//SE再生
-						game.assets[CRASH_SE].clone().play();
+//						game.assets[CRASH_SE].clone().play();
 						
 						//スコア加算
 						scoreLabel.score += 100;
