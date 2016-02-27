@@ -20,10 +20,10 @@ var BUG_WAIT_TIME   = 30;   // 虫の待ち時間
 var FIELD_IMAGE	 = "http://www.shoeisha.co.jp/book/shuchu/enchantsample/chapter03/floor.png"
 var GOKIBURI_IMAGE  = "http://www.shoeisha.co.jp/book/shuchu/enchantsample/chapter03/bug.png";
 // 音
-var MAIN_BGM        = "../../sound/gokiburi/main_bgm.wav";
-var CLEAR_BGM       = "../../sound/gokiburi/clear_bgm.wav";
-var CRY_SE          = "../../sound/gokiburi/cry.wav";
-var TOUCH_SE        = "../../sound/gokiburi/touch.wav";
+var MAIN_BGM        = "../../sound/gokiburi/main_bgm.mp3";
+var CLEAR_BGM       = "../../sound/gokiburi/clear_bgm.mp3";
+var CRY_SE          = "../../sound/gokiburi/cry.mp3";
+var TOUCH_SE        = "../../sound/gokiburi/touch.mp3";
 // アセットリスト
 var ASSETS = [
 	FIELD_IMAGE, GOKIBURI_IMAGE,
