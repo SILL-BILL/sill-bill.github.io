@@ -42,9 +42,9 @@
  */
 enchant.avatar = {
 	assets: {
-		'avatarBg1.png' : '//webtestsite.heteml.jp/test/londbell/enchantjs/img/avatar_enchant/avatarBg1.png', 
-		'avatarBg2.png' : '//webtestsite.heteml.jp/test/londbell/enchantjs/img/avatar_enchant/avatarBg2.png', 
-		'avatarBg3.png' : '//webtestsite.heteml.jp/test/londbell/enchantjs/img/avatar_enchant/avatarBg3.png'
+		'avatarBg1.png' : '/enchantjs/img/avatar_enchant/avatarBg1.png', 
+		'avatarBg2.png' : '/enchantjs/img/avatar_enchant/avatarBg2.png', 
+		'avatarBg3.png' : '/enchantjs/img/avatar_enchant/avatarBg3.png'
 	}
 };
 
