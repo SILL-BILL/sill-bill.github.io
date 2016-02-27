@@ -49,11 +49,11 @@ var ASSETS = [
 	BG02_IMAGE,
 	BG03_IMAGE,
 	BUG_IMAGE,
-	DRAGON_IMAGE,
-	MAIN_BGM,
-	PLAYER_DAMAGE_SE,
-	ENEMY_DAMAGE_SE,
-	ENEMY_APPEAR_SE
+	DRAGON_IMAGE
+//	MAIN_BGM,
+//	PLAYER_DAMAGE_SE,
+//	ENEMY_DAMAGE_SE,
+//	ENEMY_APPEAR_SE
 ];
 
 
@@ -124,8 +124,8 @@ window.onload = function(){
 			player.x = PLAYER_INIT_POS;
 			
 			//BGM再生
-			game.assets[MAIN_BGM].play();
-			game.assets[MAIN_BGM].src.loop = true;
+//			game.assets[MAIN_BGM].play();
+//			game.assets[MAIN_BGM].src.loop = true;
 			
 			scene.onupbuttondown = function(){
 				if(player.action == "attack"){
@@ -164,7 +164,7 @@ window.onload = function(){
 				monster.x = 240;
 				stage.addChild(monster);
 				//SE
-				game.assets[ENEMY_APPEAR_SE].clone().play();
+//				game.assets[ENEMY_APPEAR_SE].clone().play();
 			}
 			
 			console.dir(lifeLabel.life);
@@ -216,7 +216,7 @@ var Player = Class.create(Avatar, {
 		//ダメージアクションに切り替える
 		this.action = "damage";
 		//ダメージ
-		game.assets[PLAYER_DAMAGE_SE].clone().play();
+//		game.assets[PLAYER_DAMAGE_SE].clone().play();
 		//モーション
 		this.tl.moveBy(PLAYER_DAMAGE_BACK_LENGTH, 0, PLAYER_DAMAGE_BACK_SPEED).then(function(){
 			var right = this.x + this.width;
@@ -296,7 +296,7 @@ var BaseMonster = Class.create(AvatarMonster, {
 		}
 		this.action = "attack";
 		//ダメージ
-		game.assets[ENEMY_DAMAGE_SE].clone().play();
+//		game.assets[ENEMY_DAMAGE_SE].clone().play();
 		//ライフを減らす
 		this.life -= 1;
 		if(this.life <= 0){
