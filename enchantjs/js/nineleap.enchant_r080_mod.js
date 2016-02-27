@@ -30,8 +30,8 @@
      */
     enchant.nineleap = { 
 		assets: {
-			'start.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/nineleap_enchant/start0.png', 
-			'end.png':'//webtestsite.heteml.jp/test/londbell/enchantjs/img/nineleap_enchant/end0.png'
+			'start.png':'/enchantjs/img/nineleap_enchant/start0.png', 
+			'end.png':'/enchantjs/img/nineleap_enchant/end0.png'
 		}
 	};
 
