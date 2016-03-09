@@ -1,55 +1,103 @@
-var cv_wrap = document.getElementById("cv_wrap");
+var cv_wrap  = document.getElementById("cv_wrap");
+var cvWidth  = cv_wrap.offsetWidth | 0;
+var cvHeight = cv_wrap.offsetHeight | 0;
 
-var renderer = PIXI.autoDetectRenderer(cv_wrap.innerWidth, cv_wrap.innerHeight, { transparent: true });
+/*
+console.dir(cv_wrap);
+console.log('cvWidth：'+cvWidth);
+console.log('cvHeight：'+cvHeight);
+*/
+
+var renderer = PIXI.autoDetectRenderer(cvWidth, cvHeight, { transparent: true });
 
 cv_wrap.appendChild(renderer.view);
 
-
 // create the root of the scene graph
-var stage = new PIXI.Container();
+var container = new PIXI.Container();
 
-var count = 0;
+var emitter = new cloudkid.Emitter(
+	container,
 
-// build a rope!
-var ropeLength = 918 / 20;
+	[
+		PIXI.Texture.fromImage('/common/img/bg-particles/bubble.png'),
+		PIXI.Texture.fromImage('/common/img/bg-particles/bubble2.png'),
+		PIXI.Texture.fromImage('/common/img/bg-particles/bubble3.png')
+	],
 
-var points = [];
-
-for (var i = 0; i < 20; i++){
-	points.push(new PIXI.Point(i * ropeLength, 0));
-}
-
-var strip = new PIXI.mesh.Rope(PIXI.Texture.fromImage('/common/img/kv-sprite/snake.png'), points);
-
-strip.x = -459;
-
-var snakeContainer = new PIXI.Container();
-snakeContainer.position.x = 400;
-snakeContainer.position.y = 300;
-
-snakeContainer.scale.set(800 / 1100);
-stage.addChild(snakeContainer);
-
-snakeContainer.addChild(strip);
-
-// start animating
-requestAnimationFrame(animate);
-
-function animate() {
-
-	count += 0.1;
-
-	// make the snake
-	for (var i = 0; i < points.length; i++) {
-
-		points[i].y = Math.sin((i * 0.5) + count) * 30;
-
-		points[i].x = i * ropeLength + Math.cos((i * 0.3) + count) * 20;
-
+	{
+		"alpha": {
+			"start": 0,
+			"end": 0.22
+		},
+		"scale": {
+			"start": 0.25,
+			"end": 0.5,
+			"minimumScaleMultiplier": 0.5
+		},
+		"color": {
+			"start": "#ffffff",
+			"end": "#ffffff"
+		},
+		"speed": {
+			"start": 50,
+			"end": 50
+		},
+		"acceleration": {
+			"x": 0,
+			"y": 0
+		},
+		"startRotation": {
+			"min": 260,
+			"max": 280
+		},
+		"rotationSpeed": {
+			"min": 0,
+			"max": 50
+		},
+		"lifetime": {
+			"min": 5,
+			"max": 10
+		},
+		"blendMode": "normal",
+		"frequency": 0.016,
+		"emitterLifetime": -1,
+		"maxParticles": 300,
+		"pos": {
+			"x": 0,
+			"y": 0
+		},
+		"addAtBack": false,
+		"spawnType": "rect",
+		"spawnRect": {
+			"x": -450,
+			"y": 200,
+			"w": 2048,
+			"h": 0
+		}
 	}
+);
 
-	// render the stage
-	renderer.render(stage);
+/*
+console.log('cvWidth / 2 = '+(cvWidth / 2));
+console.log('cvHeight / 2 = '+(cvHeight / 2));
+*/
 
-	requestAnimationFrame(animate);
-}
+emitter.updateOwnerPos((cvWidth / 2), (cvHeight / 2));
+//emitter.updateOwnerPos(250, 380);
+
+var elapsed = Date.now();
+ 
+var update = function(){
+
+	var now = Date.now();
+	emitter.update((now - elapsed) * 0.001);
+	elapsed = now;
+ 
+	renderer.render(container);
+
+	requestAnimationFrame(update);
+};
+
+emitter.emit = true;
+ 
+update();
