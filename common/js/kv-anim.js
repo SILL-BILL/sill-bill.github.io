@@ -19,9 +19,9 @@ var emitter = new cloudkid.Emitter(
 	container,
 
 	[
-		PIXI.Texture.fromImage('/common/img/bg-particles/bubble.png'),
-		PIXI.Texture.fromImage('/common/img/bg-particles/bubble2.png'),
-		PIXI.Texture.fromImage('/common/img/bg-particles/bubble3.png')
+		PIXI.Texture.fromImage('/common/img/kv-particles/bubble.png'),
+		PIXI.Texture.fromImage('/common/img/kv-particles/bubble2.png'),
+		PIXI.Texture.fromImage('/common/img/kv-particles/bubble3.png')
 	],
 
 	{
