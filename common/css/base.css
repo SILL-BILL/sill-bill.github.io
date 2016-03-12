@@ -2,11 +2,6 @@
 common
 -----------------*/
 
-@font-face {
-	font-family: 'yojo';
-	src: url(../fonts/yojo.ttf);
-}
-
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
