@@ -1,14 +1,14 @@
 /*
 * main.js
 */
-var renderer = PIXI.autoDetectRenderer(320,320,{backgroundColor : 0x1099bb});
+var renderer = PIXI.autoDetectRenderer(320, 320, {transparent: true});
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
 var stage = new PIXI.Container();
 
 // create a texture from an image path
-var texture = PIXI.Texture.fromImage('avater-hatkadoll02-wh500.png');
+var texture = PIXI.Texture.fromImage('../src/img/sprites/avater-hatkadoll02.png');
 
 // create a new Sprite using the texture
 var hatkadoll02 = new PIXI.Sprite(texture);
