@@ -187,9 +187,9 @@
 	overflow: hidden;
 }
 .item-list > li .thum {
-	background: #333 url('../img/thum-640x300.jpg') no-repeat center;
+	background: #333 url('../img/thum-1024x512.jpg') no-repeat center;
 	background-size: contain;
-	padding-top: 46.88888%;
+	padding-top: 50%;
 	width: 100%;
 	position: relative;
 }
