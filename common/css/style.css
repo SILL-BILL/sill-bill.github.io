@@ -21,6 +21,7 @@
 	-ms-transition: all .5s ease;
 	transition: all .5s ease;
 }
+
 .container .main .kv a:hover,
 .container .main .kv a:focus {
 	color: #c2f6ff;
@@ -63,6 +64,21 @@
 .container .main .kv .txt {
 	font-size: 14px;
 	color: #a7a7a7;
+}
+
+.container .main .kv .logo {
+	width: 640px;
+	padding-top: 60px;
+	margin: 0 auto;
+}
+
+.container .main .kv .logo .img {
+	background: transparent url('../img/logo.png') no-repeat center;
+	background-size: contain;
+	display: block;
+	padding-top: 11.12244%;
+	position: relative;
+	width: 100%;
 }
 
 .container .main .kv canvas {
