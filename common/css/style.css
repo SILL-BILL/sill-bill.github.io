@@ -93,10 +93,21 @@
 	.container .main .kv {
 		height: 238px;
 	}
+
+	.container .main .kv .logo {
+		width: 480px;
+		padding-top: 90px;
+	}
+
 }
 @media (max-width: 640px) {
 	.container .main .kv {
 		height: 180px
+	}
+
+	.container .main .kv .logo {
+		width: 100%;
+		padding: 70px 10px 0 10px;
 	}
 }
 
@@ -299,7 +310,7 @@
 
 	.item-list {
 		margin-right: 0;
-		padding: 40px 0;
+		padding: 40px 10px;
 	}
 	.item-list > li {
 		float: none;
