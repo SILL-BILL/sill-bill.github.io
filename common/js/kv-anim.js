@@ -34,8 +34,8 @@ var emitter = new cloudkid.Emitter(
 			"minimumScaleMultiplier": 3
 		},
 		"color": {
-			"start": "#5e9bd9",
-			"end": "#419bfc"
+			"start": "#d9d15e",
+			"end": "#fce041"
 		},
 		"speed": {
 			"start": 10,
