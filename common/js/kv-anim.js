@@ -19,60 +19,59 @@ var emitter = new cloudkid.Emitter(
 	container,
 
 	[
-		PIXI.Texture.fromImage('/common/img/kv-particles/bubble.png'),
-		PIXI.Texture.fromImage('/common/img/kv-particles/bubble2.png'),
-		PIXI.Texture.fromImage('/common/img/kv-particles/bubble3.png')
+		PIXI.Texture.fromImage('/common/img/kv-particles/smoke/001.png'),
+		PIXI.Texture.fromImage('/common/img/kv-particles/smoke/002.png')
 	],
 
 	{
 		"alpha": {
-			"start": 0,
-			"end": 0.22
+			"start": 0.6,
+			"end": 0
 		},
 		"scale": {
-			"start": 0.25,
-			"end": 0.5,
-			"minimumScaleMultiplier": 0.5
+			"start": 5,
+			"end": 3,
+			"minimumScaleMultiplier": 3
 		},
 		"color": {
-			"start": "#ffffff",
-			"end": "#ffffff"
+			"start": "#5e9bd9",
+			"end": "#419bfc"
 		},
 		"speed": {
-			"start": 50,
-			"end": 50
+			"start": 10,
+			"end": 10
 		},
 		"acceleration": {
 			"x": 0,
 			"y": 0
 		},
 		"startRotation": {
-			"min": 260,
-			"max": 280
+			"min": 0,
+			"max": 360
 		},
 		"rotationSpeed": {
 			"min": 0,
-			"max": 50
+			"max": 0
 		},
 		"lifetime": {
-			"min": 5,
-			"max": 10
+			"min": 2,
+			"max": 1.8
 		},
-		"blendMode": "normal",
-		"frequency": 0.016,
+		"blendMode": "screen",
+		"frequency": 0.08,
 		"emitterLifetime": -1,
-		"maxParticles": 300,
+		"maxParticles": 50,
 		"pos": {
-			"x": 0,
-			"y": 0
+			"x": -512,
+			"y": -340
 		},
-		"addAtBack": false,
+		"addAtBack": true,
 		"spawnType": "rect",
 		"spawnRect": {
-			"x": -450,
-			"y": 200,
-			"w": 2048,
-			"h": 0
+			"x": 0,
+			"y": 0,
+			"w": 1024,
+			"h": 680
 		}
 	}
 );
