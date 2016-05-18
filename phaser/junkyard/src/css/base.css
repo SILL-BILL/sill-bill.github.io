@@ -1,0 +1,43 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+	color: #333;
+	background-color: #fff;
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+html,body {
+	height: 100%;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, img, strong,
+sub, sup, var, b, dl,dt, dd, ol, ul, li,
+form, label, table, tbody, tfoot, thead,
+tr, th, td, footer, header, hgroup, menu,
+nav, section {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+a:hover { text-decoration: underline; }
+a:hover img { opacity: 0.8; }
