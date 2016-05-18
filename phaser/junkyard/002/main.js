@@ -1,6 +1,6 @@
 var cv = { 
-	'width' : window.innerWidth,
-	'height': window.innerHeight
+	'width' : 800,
+	'height': 600
 };
 var game = new Phaser.Game(cv.width, cv.height, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 var player;
