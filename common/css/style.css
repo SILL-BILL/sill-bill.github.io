@@ -48,7 +48,7 @@
 }
 
 .header .navbar {
-	height: 56px;
+	height: 80px;
 	position: relative;
 	width: 1024px;
 	margin: 0 auto;
@@ -58,27 +58,30 @@
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 0;
+	left: 20px;
 	margin: auto 0;
-	height: 20px;
-	width: 127px;
+	height: 60px;
+	width: 60px;
 }
+
 .header .navbar .logo > a {
 	background: transparent url('../img/logo-wh.png') no-repeat center center;
 	background-size: contain;
 	display: block;
 	text-decoration: none;
 	outline: none;
-	height: 20px;
+	width: 100%;
+	height: 100%;
 
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
 }
+
 .header .navbar .logo > a:hover,
 .header .navbar .logo > a:active {
-	background-image: url('../img/logo-wh-on.png');
+	opacity: .8;
 
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
@@ -95,6 +98,7 @@
 	width: 28px;
 	height: 28px;
 }
+
 .header .navbar .btn-menu > a {
 	background: transparent url('../img/btn-menu-wh.png') no-repeat center center;
 	background-size: cover;
@@ -108,6 +112,7 @@
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
 }
+
 .header .navbar .btn-menu > a:hover,
 .header .navbar .btn-menu > a:focus,
 .header .navbar .btn-menu > a.on {
@@ -118,6 +123,7 @@
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
 }
+
 @media (max-width: 768px) {
 
 	.header .navbar {
