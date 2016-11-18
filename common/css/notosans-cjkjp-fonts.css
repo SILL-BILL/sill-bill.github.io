@@ -1,0 +1,124 @@
+/*--------------------
+ notosans-cjkjp-black
+--------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-black';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Black.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Black.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Black.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Black.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Black.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*--------------------
+ notosans-cjkjp-bold
+--------------------*/
+@font-face{
+	font-family: 'notosans-cjkjp-bold';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Bold.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Bold.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Bold.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Bold.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Bold.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-cjkjp-medium
+------------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-medium';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Medium.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Medium.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Medium.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Medium.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Medium.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-cjkjp-regular
+------------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-regular';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Regular.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Regular.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Regular.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Regular.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Regular.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-cjkjp-demi-light
+------------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-demi-light';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-DemiLight.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-DemiLight.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-DemiLight.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-DemiLight.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-DemiLight.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-cjkjp-light
+------------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-light';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Light.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Light.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Light.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Light.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Light.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*-------------------
+ notosans-cjkjp-thin
+--------------------*/
+@font-face {
+	font-family: 'notosans-cjkjp-thin';
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Thin.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansCJKjp-Thin.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Thin.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansCJKjp-Thin.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansCJKjp-Thin.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-mono-cjkjp-bold
+------------------------*/
+@font-face {
+	font-family: 'notosans-mono-cjkjp-bold';
+	src: url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Bold.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Bold.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Bold.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Bold.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Bold.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/*------------------------
+ notosans-mono-cjkjp-regular
+------------------------*/
+@font-face {
+	font-family: 'notosans-mono-cjkjp-regular';
+	src: url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Regular.eot'); /* ie9 */
+	src: url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Regular.eot?#iefix') format('embedded-opentype'), /* ie8 */
+		 url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Regular.woff2') format('woff2'), url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Regular.woff') format('woff'), /* modern browser */
+		 url('notosans-cjkjp-fonts/NotoSansMonoCJKjp-Regular.ttf') format('truetype'); /* ios, android */
+	font-weight: normal;
+	font-style: normal;
+}
