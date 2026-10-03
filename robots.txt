@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sill-bill.github.io/sitemap.xml
